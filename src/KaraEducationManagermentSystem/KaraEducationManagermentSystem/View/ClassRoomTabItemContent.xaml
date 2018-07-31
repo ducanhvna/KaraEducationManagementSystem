@@ -7,32 +7,45 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <DockPanel>
             <ToolBarTray DockPanel.Dock="Top" Background="White" Margin="15">
                 <ToolBar Background="White">
                     <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
                         <StackPanel Orientation="Vertical">
-                            <Image Source="/Resources/icon/school_64.png" Width="48"/>
-                            <TextBlock Margin="3,0,0,0">School</TextBlock>
+                            <Image Source="/Resources/icon/add_64.png" Width="48"/>
+                            <TextBlock Margin="3,0,0,0">Add room</TextBlock>
                         </StackPanel>
                     </Button>
                     <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
                         <StackPanel Orientation="Vertical">
-                            <Image Source="/Resources/icon/gener_64.png"  Width="48"/>
-                            <TextBlock Margin="3,0,0,0">Time table</TextBlock>
+                            <Image Source="/Resources/icon/edit_64.png"  Width="48"/>
+                            <TextBlock Margin="3,0,0,0">Edit room</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="/Resources/icon/del_64.png"  Width="48"/>
+                            <TextBlock Margin="3,0,0,0">Remove room</TextBlock>
+                        </StackPanel>
+                    </Button>
+                </ToolBar>
+                <ToolBar Background="White">
+                    <Button Command="Paste" ToolTip="Paste from Windows Clipboard." Background="White">
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="/Resources/icon/lessons_32.png"  Width="48"/>
+                            <TextBlock Margin="3,0,0,0">lesson</TextBlock>
                         </StackPanel>
                     </Button>
                 </ToolBar>
             </ToolBarTray>
-            <ToolBarTray DockPanel.Dock="Right" Orientation="Vertical">
-                <ToolBar>
-
-                    <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
-                        <Image Source="/WpfTutorialSamples;component/Images/paste.png" />
-                    </Button>
-                </ToolBar>
-            </ToolBarTray>
-            <TextBox AcceptsReturn="True" />
         </DockPanel>
+        <!--Grid panel-->
+        <Grid Grid.Row="1">
+            <DataGrid></DataGrid>
+        </Grid>
     </Grid>
 </UserControl>

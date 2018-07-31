@@ -140,5 +140,20 @@
   <ItemGroup>
     <Resource Include="Resources\icon\gener_48.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon\add_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon\student_add_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon\edit_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon\del_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon\lessons_32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

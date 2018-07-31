@@ -13,19 +13,19 @@
                 <v:SchoolTabItemContent></v:SchoolTabItemContent>
             </TabItem>
             <TabItem Header="Subjects">
-                Show list the Subject here
+                <v:SubjectsTabItemContent></v:SubjectsTabItemContent>
             </TabItem>
             <TabItem Header="Classes">
-                Show list the class here
+                <v:ClassesTabItemContent></v:ClassesTabItemContent>
             </TabItem>
             <TabItem Header="Class Room">
-                Show list the class room here
+                <v:ClassRoomTabItemContent></v:ClassRoomTabItemContent>
             </TabItem>
             <TabItem Header="Teachers">
-                Show list the teacher here
+                <v:TeacherTabItemContent></v:TeacherTabItemContent>
             </TabItem>
             <TabItem Header="Time table">
-                Create the time table tab
+                
             </TabItem>
         </TabControl>
     </Grid>
