@@ -54,6 +54,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="View\ClassesTabItemContent.xaml.cs">
+      <DependentUpon>ClassesTabItemContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ClassRoomTabItemContent.xaml.cs">
+      <DependentUpon>ClassRoomTabItemContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SchoolTabItemContent.xaml.cs">
+      <DependentUpon>SchoolTabItemContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SubjectsTabItemContent.xaml.cs">
+      <DependentUpon>SubjectsTabItemContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TeacherTabItemContent.xaml.cs">
+      <DependentUpon>TeacherTabItemContent.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -66,6 +81,26 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\ClassesTabItemContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ClassRoomTabItemContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SchoolTabItemContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SubjectsTabItemContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TeacherTabItemContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -92,6 +127,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon\school_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon\school_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon\gener_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon\gener_48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

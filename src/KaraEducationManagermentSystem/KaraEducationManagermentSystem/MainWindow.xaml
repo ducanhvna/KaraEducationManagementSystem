@@ -4,9 +4,29 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KaraEducationManagermentSystem"
+        xmlns:v="clr-namespace:KaraEducationManagermentSystem.View"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TabControl>
+            <TabItem Header="School">
+                <v:SchoolTabItemContent></v:SchoolTabItemContent>
+            </TabItem>
+            <TabItem Header="Subjects">
+                Show list the Subject here
+            </TabItem>
+            <TabItem Header="Classes">
+                Show list the class here
+            </TabItem>
+            <TabItem Header="Class Room">
+                Show list the class room here
+            </TabItem>
+            <TabItem Header="Teachers">
+                Show list the teacher here
+            </TabItem>
+            <TabItem Header="Time table">
+                Create the time table tab
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
