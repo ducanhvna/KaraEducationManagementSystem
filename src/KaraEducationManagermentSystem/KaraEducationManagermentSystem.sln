@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KaraEducationManagermentSer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KaraEducationModel", "KaraEducationModel\KaraEducationModel.csproj", "{DE67229D-9859-47EA-B6B5-BC6E72BBB379}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KaraMongoModel", "KaraMongoModel\KaraMongoModel.csproj", "{3BD3C99B-E00F-4400-AB3C-9B22B2DB165C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KaraMongoModelTests", "KaraMongoModelTests\KaraMongoModelTests.csproj", "{AA55F49B-E787-4E42-85CE-B3A05B21C248}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{DE67229D-9859-47EA-B6B5-BC6E72BBB379}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE67229D-9859-47EA-B6B5-BC6E72BBB379}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE67229D-9859-47EA-B6B5-BC6E72BBB379}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BD3C99B-E00F-4400-AB3C-9B22B2DB165C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BD3C99B-E00F-4400-AB3C-9B22B2DB165C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BD3C99B-E00F-4400-AB3C-9B22B2DB165C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BD3C99B-E00F-4400-AB3C-9B22B2DB165C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA55F49B-E787-4E42-85CE-B3A05B21C248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA55F49B-E787-4E42-85CE-B3A05B21C248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA55F49B-E787-4E42-85CE-B3A05B21C248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA55F49B-E787-4E42-85CE-B3A05B21C248}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
