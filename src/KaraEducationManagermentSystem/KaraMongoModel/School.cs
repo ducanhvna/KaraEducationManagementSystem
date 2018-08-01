@@ -16,5 +16,7 @@ namespace KaraMongoModelNS
 
        
         public string schoolId { get; set; }
+
+      
     }
 }

@@ -18,7 +18,7 @@
                     <Button Command="{Binding CreateNewSchoolCommand}" ToolTip="Paste from Windows Clipboard.">
                         <StackPanel Orientation="Vertical">
                             <Image Source="/Resources/icon/school_64.png" Width="48"/>
-                            <TextBlock Margin="3,0,0,0">School</TextBlock>
+                            <TextBlock Margin="3,0,0,0">New School</TextBlock>
                         </StackPanel>
                     </Button>
                     <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
@@ -29,15 +29,7 @@
                     </Button>
                 </ToolBar>
             </ToolBarTray>
-            <ToolBarTray DockPanel.Dock="Right" Orientation="Vertical">
-                <ToolBar>
-                    
-                    <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
-                        <Image Source="/WpfTutorialSamples;component/Images/paste.png" />
-                    </Button>
-                </ToolBar>
-            </ToolBarTray>
-            <TextBox AcceptsReturn="True" />
+            
         </DockPanel>
 
         <!--Content Area-->
