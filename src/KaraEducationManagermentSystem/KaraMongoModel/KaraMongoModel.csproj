@@ -7,7 +7,7 @@
     <ProjectGuid>{3BD3C99B-E00F-4400-AB3C-9B22B2DB165C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KaraMongoModel</RootNamespace>
+    <RootNamespace>KaraMongoModelNS</RootNamespace>
     <AssemblyName>KaraMongoModel</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="KaraMongodbModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="School.cs" />
     <Compile Include="Simple.cs" />
   </ItemGroup>
   <ItemGroup>

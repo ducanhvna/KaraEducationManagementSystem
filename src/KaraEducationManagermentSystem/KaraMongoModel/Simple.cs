@@ -5,7 +5,7 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Core;
 
-namespace KaraMongoModel
+namespace KaraMongoModelNS
 {
    public class Simple
     {

@@ -10,20 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace KaraEducationManagermentSystem
+namespace KaraEducationManagermentSystem.View.Dialog
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CreateNewSchoolDialog.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CreateNewSchoolDialog : Window
     {
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public MainWindow()
+        public CreateNewSchoolDialog()
         {
             InitializeComponent();
         }

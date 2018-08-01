@@ -54,11 +54,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\Dialog\SchoolCreateNewViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelClassesTabItem.cs" />
+    <Compile Include="ViewModel\ViewModelClassRoomTabItem.cs" />
+    <Compile Include="ViewModel\ViewModelMainWindow.cs" />
+    <Compile Include="ViewModel\ViewModelSchoolTabItem.cs" />
+    <Compile Include="ViewModel\ViewModelSubjectsTabItem.cs" />
     <Compile Include="View\ClassesTabItemContent.xaml.cs">
       <DependentUpon>ClassesTabItemContent.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ClassRoomTabItemContent.xaml.cs">
       <DependentUpon>ClassRoomTabItemContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\CreateNewSchoolDialog.xaml.cs">
+      <DependentUpon>CreateNewSchoolDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\OpenExistedDialog.xaml.cs">
+      <DependentUpon>OpenExistedDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SchoolTabItemContent.xaml.cs">
       <DependentUpon>SchoolTabItemContent.xaml</DependentUpon>
@@ -86,6 +98,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ClassRoomTabItemContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialog\CreateNewSchoolDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialog\OpenExistedDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -154,6 +174,19 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\icon\lessons_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KaraMongoModel\KaraMongoModel.csproj">
+      <Project>{3bd3c99b-e00f-4400-ab3c-9b22b2db165c}</Project>
+      <Name>KaraMongoModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LibCommon\LibCommon.csproj">
+      <Project>{2ff2a8f5-06c4-431a-a533-9a3525b933e5}</Project>
+      <Name>LibCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon\calendar_128.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
