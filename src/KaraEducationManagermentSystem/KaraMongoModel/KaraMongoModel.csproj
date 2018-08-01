@@ -41,6 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="EduClass.cs" />
+    <Compile Include="EduClassRoom.cs" />
+    <Compile Include="EduSubject.cs" />
+    <Compile Include="EduTeacher.cs" />
+    <Compile Include="EduTimeTable.cs" />
     <Compile Include="KaraMongodbModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="School.cs" />

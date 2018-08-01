@@ -70,6 +70,9 @@
     <Compile Include="View\Dialog\CreateNewSchoolDialog.xaml.cs">
       <DependentUpon>CreateNewSchoolDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Dialog\CreateSchoolItemsDialog.xaml.cs">
+      <DependentUpon>CreateSchoolItemsDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Dialog\FinishNewSchoolDialog.xaml.cs">
       <DependentUpon>FinishNewSchoolDialog.xaml</DependentUpon>
     </Compile>
@@ -106,6 +109,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Dialog\CreateNewSchoolDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialog\CreateSchoolItemsDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -195,6 +202,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\icon\calendar_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\Component\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

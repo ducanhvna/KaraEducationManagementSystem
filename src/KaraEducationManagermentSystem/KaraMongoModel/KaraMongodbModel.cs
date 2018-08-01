@@ -17,14 +17,19 @@ namespace KaraMongoModelNS
         private IMongoDatabase db = null;
         private BsonDocument[] seedData;
         private IMongoCollection<School> schoolCollection = null;
+        private IMongoCollection<EduClass> classCollection = null;
 
+        #region Constructor
         public KaraMongodbModel(string inUri, string dbname)
         {
 
             client = new MongoClient(uri);
             db = client.GetDatabase("kara_db");
             schoolCollection = db.GetCollection<School>("schools");
+            classCollection = db.GetCollection<EduClass>("classes");
         }
+
+        #endregion
         #region School Area
 
         public ObservableCollection<School> SchoolCollection
@@ -76,6 +81,35 @@ namespace KaraMongoModelNS
             
             // Use InsertOneAsync for single BsonDocument insertion.
             await schoolCollection.InsertOneAsync(school);
+        }
+        #endregion
+
+        #region Class Area
+        public async Task FindAllClassForSchool(School school)
+        {
+            var schoolid = school._id.Pid;
+            var task =  await   classCollection.FindAsync(x => x.schoolId == schoolid);
+            List<EduClass> list = await task.ToListAsync();
+            school.ListClass = new ObservableCollection<EduClass>();
+            foreach(var item in list)
+            {
+                school.ListClass.Add(item);
+            }
+        }
+
+        public async Task AsyncInsertOne(EduClass inclass)
+        {
+            if (inclass == null)
+            {
+                return;
+            }
+            if (classCollection == null)
+            {
+                return;
+            }
+
+            // Use InsertOneAsync for single BsonDocument insertion.
+            await classCollection.InsertOneAsync(inclass);
         }
         #endregion
     }
