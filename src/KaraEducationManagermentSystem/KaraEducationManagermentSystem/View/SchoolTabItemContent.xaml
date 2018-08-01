@@ -40,9 +40,9 @@
             <TextBox AcceptsReturn="True" />
         </DockPanel>
 
-        
+        <!--Content Area-->
         <Grid Grid.Row="1">
-            
+            <DataGrid ItemsSource="{Binding ListSchool}"></DataGrid>
         </Grid>
     </Grid>
 </UserControl>

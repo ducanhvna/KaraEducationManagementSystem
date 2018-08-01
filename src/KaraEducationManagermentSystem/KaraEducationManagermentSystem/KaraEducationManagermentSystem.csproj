@@ -55,6 +55,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModel\Dialog\SchoolCreateNewViewModel.cs" />
+    <Compile Include="ViewModel\Dialog\SchoolFinishNewViewModel.cs" />
     <Compile Include="ViewModel\ViewModelClassesTabItem.cs" />
     <Compile Include="ViewModel\ViewModelClassRoomTabItem.cs" />
     <Compile Include="ViewModel\ViewModelMainWindow.cs" />
@@ -68,6 +69,9 @@
     </Compile>
     <Compile Include="View\Dialog\CreateNewSchoolDialog.xaml.cs">
       <DependentUpon>CreateNewSchoolDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\FinishNewSchoolDialog.xaml.cs">
+      <DependentUpon>FinishNewSchoolDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Dialog\OpenExistedDialog.xaml.cs">
       <DependentUpon>OpenExistedDialog.xaml</DependentUpon>
@@ -102,6 +106,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Dialog\CreateNewSchoolDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialog\FinishNewSchoolDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

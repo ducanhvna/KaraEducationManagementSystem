@@ -1,4 +1,4 @@
-﻿<Window x:Class="KaraEducationManagermentSystem.View.Dialog.CreateNewSchoolDialog"
+﻿<Window x:Class="KaraEducationManagermentSystem.View.Dialog.FinishNewSchoolDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,12 +7,11 @@
         xmlns:vm="clr-namespace:KaraEducationManagermentSystem.ViewModel.Dialog"
         xmlns:helpers="clr-namespace:CommonNS.Helpers;assembly=LibCommon"
         mc:Ignorable="d"
-        Title="CreateNewSchoolDialog" Height="450" Width="800"
-        DataContext="{DynamicResource dialogViewmodel}"
-        WindowStartupLocation="CenterScreen"
+        Title="FinishNewSchoolDialog" Height="450" Width="800"
+        DataContext="{DynamicResource vmDialog}"
         helpers:DialogCloser.DialogResult="{Binding CloseWindowFlag}">
     <Window.Resources>
-        <vm:SchoolCreateNewViewModel x:Key="dialogViewmodel"/>
+        <vm:SchoolFinishNewViewModel x:Key="vmDialog"/>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -70,7 +69,7 @@
                 </Grid>
             </Border>
         </StackPanel>
-        
+
         <!--Buttons Area-->
         <Grid Grid.Row="1" Margin="30,0">
             <Grid.ColumnDefinitions>
@@ -100,10 +99,10 @@
             </StackPanel>
             <StackPanel Grid.Column="2" Orientation="Horizontal">
                 <Button Width="80" Margin="5,10">Previous</Button>
-                <Button Width="80" Margin="5,10" Command="{Binding NextDialogCommand}">
+                <Button Width="80" Margin="5,10" Command="{Binding FinishCreateNewSchoolCommand}">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Resources/icon/add_64.png" />
-                        <TextBlock Margin="3,0,0,0">Next</TextBlock>
+                        <TextBlock Margin="3,0,0,0">Finish</TextBlock>
                     </StackPanel>
                 </Button>
                 <Button Width="80" Margin="5,10">Close</Button>

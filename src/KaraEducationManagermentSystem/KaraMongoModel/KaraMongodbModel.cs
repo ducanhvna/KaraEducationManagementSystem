@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace KaraMongoModelNS
 {
@@ -25,6 +26,27 @@ namespace KaraMongoModelNS
             schoolCollection = db.GetCollection<School>("schools");
         }
         #region School Area
+
+        public ObservableCollection<School> SchoolCollection
+        {
+            get
+            {
+                try
+                {
+                    ObservableCollection<School> result = new ObservableCollection<School>();
+                    foreach (var item in schoolCollection.AsQueryable())
+                    {
+                        result.Add(item);
+                    }
+                    return result;
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+        }
+
         public async Task AsyncInsertMany(List<School> listSchool)
         {
 

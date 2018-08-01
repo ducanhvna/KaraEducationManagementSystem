@@ -31,7 +31,10 @@ namespace KaraEducationManagermentSystem.ViewModel
             m_Model = new KaraMongodbModel("", "");
 
             // Initialize School View model
-            SchoolViewModel = new ViewModelSchoolTabItem(m_Model);
+            SchoolViewModel = new ViewModelSchoolTabItem();
+
+            // Assign model
+            SchoolViewModel.Model = m_Model;
         }
 
         /// <summary>
