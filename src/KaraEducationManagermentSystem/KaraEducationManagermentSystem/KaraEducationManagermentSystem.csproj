@@ -54,6 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\Dialog\SchoolCreateItemsViewModel.cs" />
     <Compile Include="ViewModel\Dialog\SchoolCreateNewViewModel.cs" />
     <Compile Include="ViewModel\Dialog\SchoolFinishNewViewModel.cs" />
     <Compile Include="ViewModel\ViewModelClassesTabItem.cs" />
@@ -66,6 +67,18 @@
     </Compile>
     <Compile Include="View\ClassRoomTabItemContent.xaml.cs">
       <DependentUpon>ClassRoomTabItemContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Component\ClassManagerComponent.xaml.cs">
+      <DependentUpon>ClassManagerComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Component\ClassroomManagerComponent.xaml.cs">
+      <DependentUpon>ClassroomManagerComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Component\SubjectsManagerComponent.xaml.cs">
+      <DependentUpon>SubjectsManagerComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Component\TeacherManagerComponent.xaml.cs">
+      <DependentUpon>TeacherManagerComponent.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Dialog\CreateNewSchoolDialog.xaml.cs">
       <DependentUpon>CreateNewSchoolDialog.xaml</DependentUpon>
@@ -105,6 +118,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ClassRoomTabItemContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Component\ClassManagerComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Component\ClassroomManagerComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Component\SubjectsManagerComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Component\TeacherManagerComponent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -204,7 +233,22 @@
     <Resource Include="Resources\icon\calendar_128.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="View\Component\" />
+    <Resource Include="Resources\icon\subject_course_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon\Class_64.png" />
+    <Resource Include="Resources\icon\class_arrow_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon\subject_arrow_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon\room_64.png" />
+    <Resource Include="Resources\icon\room_arrow_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon\teacher_64.png" />
+    <Resource Include="Resources\icon\teacher_arrow_64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

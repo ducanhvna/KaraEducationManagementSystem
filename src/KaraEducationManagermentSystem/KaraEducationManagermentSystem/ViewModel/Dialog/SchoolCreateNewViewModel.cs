@@ -35,13 +35,13 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         public void NextDialog(object param)
         {
             // Initialize Dialog 
-            FinishNewSchoolDialog dialog = new FinishNewSchoolDialog();
+            CreateSchoolItemsDialog dialog = new CreateSchoolItemsDialog();
 
             // Close window
             CloseWindowFlag = true;
 
             // Get ViewModel
-            var viewModel = dialog.DataContext as SchoolFinishNewViewModel;
+            var viewModel = dialog.DataContext as SchoolCreateItemsViewModel;
             if(viewModel == null)
             {
                 return;
