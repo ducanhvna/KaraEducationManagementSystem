@@ -21,7 +21,38 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
             // Initialize NextDialog command
             NextDialogCommand = new RelayCommand(NextDialog);
         }
+        #region Display Area
+        public string Name { get
+            {
+                
+                return NewSchoolObject?.Name;
+            }
+            set
+            {
+                if(NewSchoolObject.Name != value)
+                {
+                    NewSchoolObject.Name = value;
+                    RaisePropertyChanged("NewSchoolObject");
+                }
+            }
+        }
 
+        public string AcademicYear
+        {
+            get
+            {
+                return NewSchoolObject?.AcademicYear;
+            }
+            set
+            {
+                if(NewSchoolObject?.AcademicYear != value)
+                {
+                    NewSchoolObject.AcademicYear = value;
+                    RaisePropertyChanged("AcademicYear");
+                }
+            }
+        }
+        #endregion
         /// <summary>
         /// Next Dialog command
         /// </summary>
@@ -50,9 +81,12 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
             // Assign model
             viewModel.NewSchoolObject = NewSchoolObject;
 
+            NewSchoolObject = null;
+
             // Show dialog
-            dialog.ShowDialog();
-            
+            var result = dialog.ShowDialog();
+
+
         }
     }
 }

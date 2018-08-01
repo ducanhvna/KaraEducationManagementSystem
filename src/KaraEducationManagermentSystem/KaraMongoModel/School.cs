@@ -15,6 +15,11 @@ namespace KaraMongoModelNS
         [BsonId]
         public ObjectId _id { get; set; }
 
+        public string Name { get; set; }
+
+        public string AcademicYear { get; set; }
+
+
         [BsonIgnore]
         public ObservableCollection<EduClass> ListClass { get; set; }
 

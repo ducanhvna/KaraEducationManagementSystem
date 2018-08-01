@@ -9,7 +9,8 @@
         xmlns:vm="clr-namespace:KaraEducationManagermentSystem.ViewModel.Dialog"
         mc:Ignorable="d"
         DataContext="{DynamicResource vmDialog}"
-        Title="CreateSchoolItemsDialog" Height="450" Width="800">
+        Title="CreateSchoolItemsDialog" Height="450" Width="800"
+        helpers:DialogCloser.DialogResult="{Binding CloseWindowFlag}">
     <Window.Resources>
         <vm:SchoolCreateItemsViewModel x:Key="vmDialog"></vm:SchoolCreateItemsViewModel>
     </Window.Resources>

@@ -54,6 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\Dialog\ManageSchoolItemsViewModel.cs" />
     <Compile Include="ViewModel\Dialog\SchoolCreateItemsViewModel.cs" />
     <Compile Include="ViewModel\Dialog\SchoolCreateNewViewModel.cs" />
     <Compile Include="ViewModel\Dialog\SchoolFinishNewViewModel.cs" />
@@ -80,8 +81,20 @@
     <Compile Include="View\Component\TeacherManagerComponent.xaml.cs">
       <DependentUpon>TeacherManagerComponent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Dialog\CreateNewClassDialog.xaml.cs">
+      <DependentUpon>CreateNewClassDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\CreateNewClassRoomDialog.xaml.cs">
+      <DependentUpon>CreateNewClassRoomDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Dialog\CreateNewSchoolDialog.xaml.cs">
       <DependentUpon>CreateNewSchoolDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\CreateNewSubjectDialog.xaml.cs">
+      <DependentUpon>CreateNewSubjectDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\CreateNewTeacherDialog.xaml.cs">
+      <DependentUpon>CreateNewTeacherDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Dialog\CreateSchoolItemsDialog.xaml.cs">
       <DependentUpon>CreateSchoolItemsDialog.xaml</DependentUpon>
@@ -89,11 +102,17 @@
     <Compile Include="View\Dialog\FinishNewSchoolDialog.xaml.cs">
       <DependentUpon>FinishNewSchoolDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Dialog\ManageSchoolItemDialog.xaml.cs">
+      <DependentUpon>ManageSchoolItemDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Dialog\OpenExistedDialog.xaml.cs">
       <DependentUpon>OpenExistedDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SchoolTabItemContent.xaml.cs">
       <DependentUpon>SchoolTabItemContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\AddCustomValueDialog.xaml.cs">
+      <DependentUpon>AddCustomValueDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SubjectsTabItemContent.xaml.cs">
       <DependentUpon>SubjectsTabItemContent.xaml</DependentUpon>
@@ -137,7 +156,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Dialog\CreateNewClassDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialog\CreateNewClassRoomDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Dialog\CreateNewSchoolDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialog\CreateNewSubjectDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialog\CreateNewTeacherDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -149,11 +184,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Dialog\ManageSchoolItemDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Dialog\OpenExistedDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SchoolTabItemContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shared\AddCustomValueDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

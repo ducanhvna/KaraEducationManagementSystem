@@ -47,7 +47,7 @@
 
                         <!--Academic year-->
                         <TextBlock Grid.Row="1" Margin="3">Academic year:</TextBlock>
-                        <TextBox Grid.Row="1" Grid.Column="1" Margin="3"></TextBox>
+                        <TextBox Grid.Row="1" Grid.Column="1" Margin="3" Text="{Binding AcademicYear}"></TextBox>
 
                         <!--Registration name-->
                         <TextBlock Grid.Row="2">Registration Name:</TextBlock>
