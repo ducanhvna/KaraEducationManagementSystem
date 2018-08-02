@@ -6,7 +6,43 @@
         xmlns:local="clr-namespace:KaraEducationManagermentSystem.View.Shared"
         mc:Ignorable="d"
         Title="AddCustomValueDialog" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <!--Content Area-->
+        <StackPanel>
+            <Grid Height="80">
+                
+            </Grid>
+            <DataGrid></DataGrid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Name"/>
+                <TextBox Grid.Column="1" Text="Value"/>
+            </Grid>
+        </StackPanel>
+        <!--button area-->
+        <StackPanel Grid.Column="1" Margin="10,80,0,0">
+            <Button Margin="5" Width="120" Height="20">Add</Button>
+            <Button Margin="5" Width="120" Height="20">Rename</Button>
+            <Button Margin="5,25,5,25" Width="120" Height="20">Set for me</Button>
+            <Button Margin="5" Width="120" Height="20">Remove</Button>
+
+            <Grid Height="20"  Width="120"  Margin="5,40,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Width="30" Content="&lt;&lt;" HorizontalAlignment="Center"></Button>
+                <Button Width="30" Grid.Column="1" HorizontalAlignment="Center" Content="&gt;&gt;"></Button>
+                
+            </Grid>
+            <Button Margin="5,10" Width="120" Height="20">Close</Button>
+        </StackPanel>
     </Grid>
 </Window>

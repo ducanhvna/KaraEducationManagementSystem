@@ -22,7 +22,11 @@ namespace KaraEducationManagermentSystem.ViewModel
             // Initialize Create new school Command
             CreateNewSchoolCommand = new RelayCommand(CreateNewSchool);
 
-           
+            // Initalize Open exited school
+            OpenSchoolCommand = new RelayCommand(OpenSchool);
+
+            Model = ViewModelMainWindow.SharedModel;
+
         }
 
         #region Initalize Display Area
@@ -113,7 +117,17 @@ namespace KaraEducationManagermentSystem.ViewModel
             CreateNewSchoolViewModel = null;
             NewSchoolObject = null;
         }
-        
+
+        #endregion
+
+        #region OpenSchool Command
+        public RelayCommand OpenSchoolCommand { get; internal set; }
+        private void OpenSchool(object param)
+        {
+            OpenExistedDialog dialog = new OpenExistedDialog();
+
+            dialog.ShowDialog();
+        }
         #endregion
     }
 }

@@ -18,6 +18,7 @@ namespace KaraEducationManagermentSystem.ViewModel
         /// </summary>
         private KaraMongodbModel m_Model = null;
 
+        public static KaraMongodbModel SharedModel = null;
         /// <summary>
         /// view model of School tab
         /// </summary>
@@ -30,11 +31,12 @@ namespace KaraEducationManagermentSystem.ViewModel
         {
             m_Model = new KaraMongodbModel("", "");
 
+            SharedModel = m_Model;
             // Initialize School View model
-            SchoolViewModel = new ViewModelSchoolTabItem();
+            //SchoolViewModel = new ViewModelSchoolTabItem();
 
             // Assign model
-            SchoolViewModel.Model = m_Model;
+            //SchoolViewModel.Model = m_Model;
         }
 
         /// <summary>
@@ -51,6 +53,10 @@ namespace KaraEducationManagermentSystem.ViewModel
                 if(m_SchoolViewModel != value)
                 {
                     m_SchoolViewModel = value;
+                    if (m_SchoolViewModel != null)
+                    {
+                        m_SchoolViewModel.Model = m_Model;
+                    }
                     RaisePropertyChanged("SchoolViewModel");
                 }
             }

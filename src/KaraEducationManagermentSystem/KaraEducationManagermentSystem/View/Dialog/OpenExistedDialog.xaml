@@ -4,9 +4,46 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KaraEducationManagermentSystem.View.Dialog"
+        xmlns:helpers="clr-namespace:CommonNS.Helpers;assembly=LibCommon"
+        xmlns:vm="clr-namespace:KaraEducationManagermentSystem.ViewModel.Dialog"
         mc:Ignorable="d"
-        Title="OpenExistedDialog" Height="450" Width="800">
-    <Grid>
+        Title="OpenExistedDialog" Height="450" Width="400"
+        WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"
+        helpers:DialogCloser.DialogResult="{Binding CloseWindowFlag}"
+        DataContext="{DynamicResource vmDialog}">
+    <Window.Resources>
+        <vm:OpenExistedDialogViewModel x:Key="vmDialog"></vm:OpenExistedDialogViewModel>
+    </Window.Resources>
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <!--Definition Area-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock VerticalAlignment="Center">Name of school:</TextBlock>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding SelectedSchool.Name, Mode=OneWay}"/>
+            <TextBlock Grid.Row="1" VerticalAlignment="Center">Description:</TextBlock>
+        </Grid>
+        <!--List School-->
+        <DataGrid Grid.Row="1" ItemsSource="{Binding ListSchool}"
+                  SelectedItem="{Binding SelectedSchool}"></DataGrid>
         
+        <!--Button Area-->
+        <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <!--Button OK-->
+            <Button Content="OK" Width="80" Height="20" Margin="20,0" Command="{Binding OpenSchoolCommand}" ></Button>
+            <Button Content="Cancel" Width="80" Height="20" Command="{Binding IgnoreActionCommand}"/>
+        </StackPanel>
     </Grid>
 </Window>

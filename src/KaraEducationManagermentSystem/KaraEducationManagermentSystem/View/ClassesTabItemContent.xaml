@@ -4,8 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KaraEducationManagermentSystem.View"
+             xmlns:vm="clr-namespace:KaraEducationManagermentSystem.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="{DynamicResource vmTab}">
+    <UserControl.Resources>
+        <vm:ViewModelClassesTabItem x:Key="vmTab"/>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="120"/>
@@ -14,16 +19,16 @@
         <DockPanel>
             <ToolBarTray DockPanel.Dock="Top" Background="White" Margin="15">
                 <ToolBar Background="White">
-                    <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
+                    <Button Command="{Binding ManageClassCollectionsCommand}" ToolTip="Paste from Windows Clipboard.">
                         <StackPanel Orientation="Vertical">
                             <Image Source="/Resources/icon/add_64.png" Width="48"/>
-                            <TextBlock Margin="3,0,0,0">Add Class</TextBlock>
+                            <TextBlock Margin="3,0,0,0">Manager</TextBlock>
                         </StackPanel>
                     </Button>
                     <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
                         <StackPanel Orientation="Vertical">
                             <Image Source="/Resources/icon/edit_64.png"  Width="48"/>
-                            <TextBlock Margin="3,0,0,0">Edit class</TextBlock>
+                            <TextBlock Margin="3,0,0,0">Test Score</TextBlock>
                         </StackPanel>
                     </Button>
                     <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
@@ -43,9 +48,17 @@
                 </ToolBar>
             </ToolBarTray>
         </DockPanel>
-        <!--Grid panel-->
+        <!--Grid panel content-->
         <Grid Grid.Row="1">
-            <DataGrid></DataGrid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <!--List of Class-->
+            <TreeView></TreeView>
+            
+            <!--List of pupile in class-->
+            <DataGrid Grid.Column="1"></DataGrid>
         </Grid>
     </Grid>
 </UserControl>

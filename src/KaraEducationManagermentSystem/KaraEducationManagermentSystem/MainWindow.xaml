@@ -12,9 +12,9 @@
     <Window.Resources>
         <vm:ViewModelMainWindow x:Key="mainViewModel"/>
     </Window.Resources>
-    <Grid>
+    <Grid x:Name="mainGrid">
         <TabControl>
-            <TabItem Header="School" DataContext="{Binding SchoolViewModel}">
+            <TabItem Header="School" >
                 <v:SchoolTabItemContent></v:SchoolTabItemContent>
             </TabItem>
             <TabItem Header="Subjects">

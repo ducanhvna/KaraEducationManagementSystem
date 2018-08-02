@@ -55,6 +55,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModel\Dialog\ManageSchoolItemsViewModel.cs" />
+    <Compile Include="ViewModel\Dialog\OpenExistedDialogViewModel.cs" />
     <Compile Include="ViewModel\Dialog\SchoolCreateItemsViewModel.cs" />
     <Compile Include="ViewModel\Dialog\SchoolCreateNewViewModel.cs" />
     <Compile Include="ViewModel\Dialog\SchoolFinishNewViewModel.cs" />
