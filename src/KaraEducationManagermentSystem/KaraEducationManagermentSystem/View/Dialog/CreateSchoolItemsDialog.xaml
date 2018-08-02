@@ -6,11 +6,15 @@
         xmlns:local="clr-namespace:KaraEducationManagermentSystem.View.Dialog"
         xmlns:helpers="clr-namespace:CommonNS.Helpers;assembly=LibCommon"
         xmlns:component="clr-namespace:KaraEducationManagermentSystem.View.Component"
+        xmlns:share="clr-namespace:KaraEducationManagermentSystem.View.Shared"
         xmlns:vm="clr-namespace:KaraEducationManagermentSystem.ViewModel.Dialog"
         mc:Ignorable="d"
-        DataContext="{DynamicResource vmDialog}"
+       
         Title="CreateSchoolItemsDialog" Height="450" Width="800"
-        helpers:DialogCloser.DialogResult="{Binding CloseWindowFlag}">
+        WindowStartupLocation="CenterScreen"
+        helpers:DialogCloser.DialogResult="{Binding CloseWindowFlag}"
+        x:Name="mainWindow"
+         DataContext="{DynamicResource vmDialog}">
     <Window.Resources>
         <vm:SchoolCreateItemsViewModel x:Key="vmDialog"></vm:SchoolCreateItemsViewModel>
     </Window.Resources>
@@ -50,61 +54,66 @@
             </StackPanel>
             
             <!--Content Area-->
-            <Grid Grid.Column="1" Margin="20,0">
+            <Grid Grid.Column="1" Margin="20,0" >
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Visibility" Value="Hidden" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=CurrentItemIndex}" Value="0">
+                                <Setter Property="Visibility" Value="Visible" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
                 <!--Subject Content Area-->
-                <component:SubjectsManagerComponent >
-                    <component:SubjectsManagerComponent.Style>
-                        <Style TargetType="component:SubjectsManagerComponent">
-                            <Setter Property="Visibility" Value="Hidden" />
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding Path=CurrentItemIndex}" Value="0">
-                                    <Setter Property="Visibility" Value="Visible" />
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </component:SubjectsManagerComponent.Style>
+                <component:SubjectsManagerComponent DataContext="{Binding SubjectsManagerViewModel}">
+
                 </component:SubjectsManagerComponent>
-                
+            </Grid>
+            <Grid Grid.Column="1" Margin="20,0">
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Visibility" Value="Hidden" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=CurrentItemIndex}" Value="1">
+                                <Setter Property="Visibility" Value="Visible" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
                 <!--Class content Area-->
-                <component:ClassManagerComponent>
-                    <component:ClassManagerComponent.Style>
-                        <Style TargetType="component:ClassManagerComponent">
-                            <Setter Property="Visibility" Value="Hidden" />
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding Path=CurrentItemIndex}" Value="1">
-                                    <Setter Property="Visibility" Value="Visible" />
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </component:ClassManagerComponent.Style>
-                </component:ClassManagerComponent>
-                
+                <component:ClassManagerComponent></component:ClassManagerComponent>
+            </Grid>
+            <Grid Grid.Column="1" Margin="20,0">
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Visibility" Value="Hidden" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=CurrentItemIndex}" Value="2">
+                                <Setter Property="Visibility" Value="Visible" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
                 <!--Class room content Area-->
                 <component:ClassroomManagerComponent>
-                    <component:ClassroomManagerComponent.Style>
-                        <Style TargetType="component:ClassroomManagerComponent">
-                            <Setter Property="Visibility" Value="Hidden" />
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding Path=CurrentItemIndex}" Value="2">
-                                    <Setter Property="Visibility" Value="Visible" />
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </component:ClassroomManagerComponent.Style>
+                 
                 </component:ClassroomManagerComponent>
-                
+            </Grid>
+            <Grid Grid.Column="1" Margin="20,0">
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Visibility" Value="Hidden" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=CurrentItemIndex}" Value="3">
+                                <Setter Property="Visibility" Value="Visible" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
                 <!--Teacher content Area-->
                 <component:TeacherManagerComponent>
-                    <component:TeacherManagerComponent.Style>
-                        <Style TargetType="component:TeacherManagerComponent">
-                            <Setter Property="Visibility" Value="Hidden" />
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding Path=CurrentItemIndex}" Value="3">
-                                    <Setter Property="Visibility" Value="Visible" />
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </component:TeacherManagerComponent.Style>
+                  
                 </component:TeacherManagerComponent>
             </Grid>
         </Grid>

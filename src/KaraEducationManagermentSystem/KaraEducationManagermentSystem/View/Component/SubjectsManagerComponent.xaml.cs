@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KaraEducationManagermentSystem.ViewModel.Component;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,15 @@ namespace KaraEducationManagermentSystem.View.Component
         public SubjectsManagerComponent()
         {
             InitializeComponent();
+            try
+            {
+                this.DataContext = new SubjectsManagerComponentViewModel();
+            }
+            catch
+            {
+
+
+            }
         }
     }
 }

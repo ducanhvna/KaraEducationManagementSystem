@@ -1,7 +1,11 @@
-﻿using CommonNS.ViewModel;
+﻿using CommonNS.Helpers;
+using CommonNS.ViewModel;
+using KaraEducationManagermentSystem.View.Dialog;
+using KaraEducationManagermentSystem.ViewModel.Dialog;
 using KaraMongoModelNS;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +16,10 @@ namespace KaraEducationManagermentSystem.ViewModel.Component
     {
         private School m_SchoolObject;
         KaraMongodbModel m_Model;
-
+        public SubjectsManagerComponentViewModel()
+        {
+            AddNewSubjectCommand = new RelayCommand(AddNewSubject);
+        }
         public School SchoolObject
         {
             get => m_SchoolObject; set
@@ -36,5 +43,21 @@ namespace KaraEducationManagermentSystem.ViewModel.Component
                 }
             }
         }
+
+        #region AddNewSubjectCommand
+
+        public RelayCommand AddNewSubjectCommand { get; internal set; }
+
+        public void AddNewSubject(object param)
+        {
+            CreateNewSubjectDialog dialog = new CreateNewSubjectDialog();
+            var vm = dialog.DataContext as CreateNewSubjectViewModel;
+            dialog.ShowDialog();
+
+            SchoolObject.ListSubject.Add (vm.NewSubject);
+        }
+
+       
+        #endregion
     }
 }

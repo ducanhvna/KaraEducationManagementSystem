@@ -58,6 +58,7 @@
     <Compile Include="ViewModel\Component\ClassroomManagerComponentViewModel.cs" />
     <Compile Include="ViewModel\Component\SubjectsManagerComponentViewModel.cs" />
     <Compile Include="ViewModel\Component\TeacherManagerComponentViewModel.cs" />
+    <Compile Include="ViewModel\Dialog\CreateNewSubjectViewModel.cs" />
     <Compile Include="ViewModel\Dialog\ManageSchoolItemsViewModel.cs" />
     <Compile Include="ViewModel\Dialog\OpenExistedDialogViewModel.cs" />
     <Compile Include="ViewModel\Dialog\SchoolCreateItemsViewModel.cs" />

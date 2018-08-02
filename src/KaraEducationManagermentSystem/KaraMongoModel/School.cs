@@ -12,6 +12,7 @@ namespace KaraMongoModelNS
 {
     public  class School
     {
+        public School() { }
         [BsonId]
         public ObjectId _id { get; set; }
 

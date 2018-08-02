@@ -83,7 +83,7 @@ namespace KaraEducationManagermentSystem.ViewModel
             }
         }
 
-        public School NewSchoolObject { get; internal set; }
+    
 
         /// <summary>
         /// Create new school command execution 
@@ -99,24 +99,13 @@ namespace KaraEducationManagermentSystem.ViewModel
             CreateNewSchoolViewModel = frmDialog.DataContext as SchoolCreateNewViewModel;
 
             // Set new School Object
-            NewSchoolObject = new School()
-            {
-                AcademicYear = "",
-                ListClassRoom =  new ObservableCollection<EduClassRoom>(),
-                Name="",
-                Teachers= new ObservableCollection<EduTeacher>(),
-                ListClass = new ObservableCollection<EduClass>(),
-                ListSubject = new ObservableCollection<EduSubject>(),
-                TimeTable = new EduTimeTable()
-
-            };
+           
 
             if (CreateNewSchoolViewModel== null)
             {
                 return;
             }
-            // Assign Model
-            CreateNewSchoolViewModel.SchoolObject = NewSchoolObject;
+       
 
             
 
@@ -124,17 +113,16 @@ namespace KaraEducationManagermentSystem.ViewModel
             frmDialog.ShowDialog();
             if (CreateNewSchoolViewModel.CloseWindowFlag == true)
             {
-                if (NewSchoolObject != null)
+                if (CreateNewSchoolViewModel.SchoolObject != null)
                 {
                     //await EduModel.AsyncInsertOne(NewSchoolObject);
 
-                    await EduModel.AsyncInsertOne(NewSchoolObject);
+                    await EduModel.AsyncInsertOne(CreateNewSchoolViewModel.SchoolObject);
                     ListSchool = EduModel.SchoolCollection;
                 }
             }
             // Release object
             CreateNewSchoolViewModel = null;
-            NewSchoolObject = null;
         }
 
         #endregion

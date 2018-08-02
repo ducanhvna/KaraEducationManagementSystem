@@ -4,6 +4,7 @@ using KaraEducationManagermentSystem.View.Dialog;
 using KaraMongoModelNS;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,17 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         /// </summary>
         public SchoolCreateNewViewModel()
         {
+            SchoolObject = new School()
+            {
+                AcademicYear = "",
+                ListClassRoom = new ObservableCollection<EduClassRoom>(),
+                Name = "",
+                Teachers = new ObservableCollection<EduTeacher>(),
+                ListClass = new ObservableCollection<EduClass>(),
+                ListSubject = new ObservableCollection<EduSubject>(),
+                TimeTable = new EduTimeTable()
+
+            };
             // Initialize NextDialog command
             NextDialogCommand = new RelayCommand(NextDialog);
         }
@@ -74,10 +86,10 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
 
         public KaraMongodbModel EduModel
         {
-            get => throw new NotImplementedException();
+            get => m_Model;
             set
             {
-                throw new NotImplementedException();
+                m_Model = value;
             }
         }
 
@@ -103,7 +115,7 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
             // Assign model
             viewModel.SchoolObject = SchoolObject;
 
-            SchoolObject = null;
+         
 
             // Show dialog
             var result = dialog.ShowDialog();

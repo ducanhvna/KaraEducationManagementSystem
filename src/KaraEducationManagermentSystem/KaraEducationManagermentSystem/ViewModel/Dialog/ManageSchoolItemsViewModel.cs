@@ -91,7 +91,15 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         #endregion
 
         #region Class Room Area
+        /// <summary>
+        /// ClassRoomSelectCommand
+        /// </summary>
         public RelayCommand ClassRoomSelectCommand { get; internal set; }
+
+        /// <summary>
+        /// ClassRoomSelect
+        /// </summary>
+        /// <param name="param"></param>
         private void ClassRoomSelect(object param)
         {
             CurrentItemIndex = 2;

@@ -1,6 +1,7 @@
 ﻿using CommonNS.Helpers;
 using CommonNS.ViewModel;
 using KaraEducationManagermentSystem.View.Dialog;
+using KaraEducationManagermentSystem.ViewModel.Component;
 using KaraMongoModelNS;
 using System;
 using System.Collections.Generic;
@@ -13,10 +14,11 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
 {
     class SchoolCreateItemsViewModel : ViewModelBase, IManageSchoolBase
     {
-        private int m_currentItemIndex;
+        private int m_currentItemIndex = 0;
 
-        private School m_SchoolObject;
+        private School m_SchoolObject = new School();
         KaraMongodbModel m_Model;
+        private SubjectsManagerComponentViewModel m_SubjectsManagerViewModel;
 
         public School SchoolObject
         {
@@ -25,14 +27,15 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
                 if (m_SchoolObject != value)
                 {
                     m_SchoolObject = value;
+                    SubjectsManagerViewModel.SchoolObject = m_SchoolObject;
                     RaisePropertyChanged("SchoolObject");
                 }
             }
         }
         public KaraMongodbModel EduModel
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get => m_Model;
+            set => m_Model = value;
         }
 
         #region Contructor
@@ -52,6 +55,8 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
 
             // Initialize Next command
             NextDialogCommand = new RelayCommand(NextDialog);
+
+            SubjectsManagerViewModel = new SubjectsManagerComponentViewModel();
         }
         #endregion
 
@@ -153,5 +158,22 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         }
 
         #endregion
+
+        public SubjectsManagerComponentViewModel SubjectsManagerViewModel
+        {
+            get
+            {
+                return m_SubjectsManagerViewModel;
+            }
+            set
+            {
+                if(m_SubjectsManagerViewModel!= value)
+                {
+                    m_SubjectsManagerViewModel = value;
+                    RaisePropertyChanged("SubjectsManagerViewModel");
+                }
+            }
+
+        }
     }
 }
