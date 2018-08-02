@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KaraEducationManagermentSystem.View.Dialog"
           xmlns:component="clr-namespace:KaraEducationManagermentSystem.View.Component"
+        xmlns:helpers="clr-namespace:CommonNS.Helpers;assembly=LibCommon"
         xmlns:vm="clr-namespace:KaraEducationManagermentSystem.ViewModel.Dialog"
         mc:Ignorable="d"
-        Title="ManageSchoolItemDialog" Height="450" Width="800">
+        Title="ManageSchoolItemDialog" Height="450" Width="800"
+        DataContext="{DynamicResource vmDialog}"
+        helpers:DialogCloser.DialogResult="{Binding CloseWindowFlag}">
     <Window.Resources>
         <vm:ManageSchoolItemsViewModel x:Key="vmDialog"></vm:ManageSchoolItemsViewModel>
     </Window.Resources>
@@ -118,9 +121,7 @@
                 <Button Height="25" Width="50" Margin="10,0">Import</Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Right">
-                <Button Height="25" Width="50" Margin="10,0" HorizontalAlignment="Right">Previous</Button>
-                <Button Height="25" Width="50" Margin="10,0" HorizontalAlignment="Right" Command="{Binding NextDialogCommand}">Next</Button>
-                <Button Height="25" Width="50" Margin="10,0" HorizontalAlignment="Right">Close</Button>
+                <Button Height="25" Width="50" Margin="10,0" HorizontalAlignment="Right" Command="{Binding CloseDialogCommand}">Close</Button>
             </StackPanel>
         </Grid>
     </Grid>

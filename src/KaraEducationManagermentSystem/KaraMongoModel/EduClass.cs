@@ -15,11 +15,6 @@ namespace KaraMongoModelNS
         public string Name { get; set; }
 
         /// <summary>
-        /// school ID 
-        /// </summary>
-        public short schoolId { get; set; }
-
-        /// <summary>
         /// teacher Id
         /// </summary>
         public short teacherId { get; set; }

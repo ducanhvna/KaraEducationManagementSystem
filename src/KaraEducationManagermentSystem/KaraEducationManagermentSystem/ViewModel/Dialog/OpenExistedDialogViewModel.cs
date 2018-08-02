@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace KaraEducationManagermentSystem.ViewModel.Dialog
 {
-    class OpenExistedDialogViewModel: ViewModelBase
+    class OpenExistedDialogViewModel: ViewModelBase, IManageSchoolBase
     {
         private ObservableCollection<School> m_ListSchool;
 
@@ -20,7 +20,11 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         /// </summary>
         public OpenExistedDialogViewModel()
         {
-            Model = ViewModelMainWindow.SharedModel;
+            
+
+            OpenSchoolCommand = new RelayCommand(OpenSchool);
+
+            IgnoreActionCommand = new RelayCommand(IgnoreAction);
         }
         #endregion
 
@@ -29,19 +33,19 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         /// <summary>
         /// Model
         /// </summary>
-        public KaraMongodbModel Model
+        public KaraMongodbModel EduModel
         {
             get
             {
                 return m_Model;
                 ;
             }
-            internal set
+            set
             {
                 if (m_Model != value)
                 {
                     m_Model = value;
-                    ListSchool = Model.SchoolCollection;
+                    ListSchool = m_Model.SchoolCollection;
                 }
             }
         }
@@ -100,6 +104,8 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
 
         #region Ignore command
         public RelayCommand IgnoreActionCommand { get; internal set; }
+        public School SchoolObject { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        
 
         private void IgnoreAction(object param)
         {

@@ -11,27 +11,28 @@ namespace KaraEducationManagermentSystem.ViewModel
     /// <summary>
     /// ViewModel for MainWindow
     /// </summary>
-    class ViewModelMainWindow : ViewModelBase
+    class ViewModelMainWindow : ViewModelBase, IManageSchoolBase
     {
         /// <summary>
         /// model
         /// </summary>
         private KaraMongodbModel m_Model = null;
 
-        public static KaraMongodbModel SharedModel = null;
+ 
         /// <summary>
         /// view model of School tab
         /// </summary>
         private ViewModelSchoolTabItem m_SchoolViewModel;
+        private School m_SchoolObject = null;
 
         /// <summary>
         /// Constructor
         /// </summary>
         public ViewModelMainWindow()
         {
-            m_Model = new KaraMongodbModel("", "");
+            EduModel = new KaraMongodbModel("", "");
 
-            SharedModel = m_Model;
+           
             // Initialize School View model
             //SchoolViewModel = new ViewModelSchoolTabItem();
 
@@ -55,9 +56,33 @@ namespace KaraEducationManagermentSystem.ViewModel
                     m_SchoolViewModel = value;
                     if (m_SchoolViewModel != null)
                     {
-                        m_SchoolViewModel.Model = m_Model;
+                        m_SchoolViewModel.EduModel = m_Model;
                     }
                     RaisePropertyChanged("SchoolViewModel");
+                }
+            }
+        }
+
+        public School SchoolObject
+        {
+            get => m_SchoolObject; set
+            {
+                if (m_SchoolObject != value)
+                {
+                    m_SchoolObject = value;
+                    RaisePropertyChanged("SchoolObject");
+                }
+            }
+        }
+        public KaraMongodbModel EduModel
+        {
+            get => m_Model;
+            set
+            {
+                if (m_Model != value)
+                {
+                    m_Model = value;
+                    RaisePropertyChanged("EduModel");
                 }
             }
         }

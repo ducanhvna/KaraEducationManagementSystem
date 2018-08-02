@@ -6,16 +6,21 @@
         xmlns:local="clr-namespace:KaraEducationManagermentSystem"
         xmlns:v="clr-namespace:KaraEducationManagermentSystem.View"
         xmlns:vm ="clr-namespace:KaraEducationManagermentSystem.ViewModel"
+        xmlns:viewShare="clr-namespace:KaraEducationManagermentSystem.View.Shared"
         mc:Ignorable="d"
         DataContext="{DynamicResource mainViewModel}"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Name="mainWindow">
     <Window.Resources>
         <vm:ViewModelMainWindow x:Key="mainViewModel"/>
     </Window.Resources>
     <Grid x:Name="mainGrid">
         <TabControl>
             <TabItem Header="School" >
-                <v:SchoolTabItemContent></v:SchoolTabItemContent>
+                <v:SchoolTabItemContent viewShare:ShareObject.ModelObject="{Binding ElementName=mainWindow, Path=DataContext.EduModel}"
+                                        >
+                    
+                </v:SchoolTabItemContent>
             </TabItem>
             <TabItem Header="Subjects">
                 <v:SubjectsTabItemContent></v:SubjectsTabItemContent>

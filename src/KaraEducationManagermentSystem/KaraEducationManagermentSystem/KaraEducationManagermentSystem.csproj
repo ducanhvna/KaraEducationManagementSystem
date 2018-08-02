@@ -54,11 +54,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\Component\ClassManagerComponentViewModel.cs" />
+    <Compile Include="ViewModel\Component\ClassroomManagerComponentViewModel.cs" />
+    <Compile Include="ViewModel\Component\SubjectsManagerComponentViewModel.cs" />
+    <Compile Include="ViewModel\Component\TeacherManagerComponentViewModel.cs" />
     <Compile Include="ViewModel\Dialog\ManageSchoolItemsViewModel.cs" />
     <Compile Include="ViewModel\Dialog\OpenExistedDialogViewModel.cs" />
     <Compile Include="ViewModel\Dialog\SchoolCreateItemsViewModel.cs" />
     <Compile Include="ViewModel\Dialog\SchoolCreateNewViewModel.cs" />
     <Compile Include="ViewModel\Dialog\SchoolFinishNewViewModel.cs" />
+    <Compile Include="ViewModel\IManageSchoolItem.cs" />
     <Compile Include="ViewModel\ViewModelClassesTabItem.cs" />
     <Compile Include="ViewModel\ViewModelClassRoomTabItem.cs" />
     <Compile Include="ViewModel\ViewModelMainWindow.cs" />
@@ -121,6 +126,7 @@
     <Compile Include="View\Shared\ManagerLessonDialog.xaml.cs">
       <DependentUpon>ManagerLessonDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Shared\ShareObject.cs" />
     <Compile Include="View\SubjectsTabItemContent.xaml.cs">
       <DependentUpon>SubjectsTabItemContent.xaml</DependentUpon>
     </Compile>

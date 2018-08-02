@@ -12,7 +12,7 @@ namespace KaraMongoModelNS
         public string ShortName { get; set; }
         public string Color { get; set; }
         public string Picture { get; set; }
-        public short schoolId { get; set; }
+
         [BsonIgnore]
         public School school { get; set; }
     }

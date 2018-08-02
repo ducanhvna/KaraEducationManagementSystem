@@ -4,16 +4,36 @@ using KaraEducationManagermentSystem.View.Dialog;
 using KaraMongoModelNS;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace KaraEducationManagermentSystem.ViewModel.Dialog
 {
-    class SchoolCreateItemsViewModel : ViewModelBase
+    class SchoolCreateItemsViewModel : ViewModelBase, IManageSchoolBase
     {
         private int m_currentItemIndex;
-        public School NewSchoolObject { get; internal set; }
+
+        private School m_SchoolObject;
+        KaraMongodbModel m_Model;
+
+        public School SchoolObject
+        {
+            get => m_SchoolObject; set
+            {
+                if (m_SchoolObject != value)
+                {
+                    m_SchoolObject = value;
+                    RaisePropertyChanged("SchoolObject");
+                }
+            }
+        }
+        public KaraMongodbModel EduModel
+        {
+            get => throw new NotImplementedException();
+            set => throw new NotImplementedException();
+        }
 
         #region Contructor
         public SchoolCreateItemsViewModel()
@@ -59,6 +79,8 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         {
             CurrentItemIndex = 0;
         }
+
+    
         #endregion
 
         #region Class Area
@@ -67,6 +89,7 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         {
             CurrentItemIndex = 1;
         }
+
         #endregion
 
         #region Class Room Area
@@ -106,7 +129,7 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
                     FinishNewSchoolDialog dialog = new FinishNewSchoolDialog();
 
                     // Close window
-                    CloseWindowFlag = true;
+                    CloseWindowFlag = false;
 
                     // Get ViewModel
                     var viewModel = dialog.DataContext as SchoolFinishNewViewModel;
@@ -116,10 +139,12 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
                     }
 
                     // Assign model
-                    viewModel.NewSchoolObject = NewSchoolObject;
+                    viewModel.NewSchoolObject = SchoolObject;
 
                     // Show dialog
                     dialog.ShowDialog();
+
+                    CloseWindowFlag = viewModel.CloseWindowFlag;
                     break;
                 default:
                     break;

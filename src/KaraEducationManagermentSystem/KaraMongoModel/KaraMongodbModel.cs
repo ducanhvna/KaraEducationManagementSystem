@@ -78,24 +78,43 @@ namespace KaraMongoModelNS
             {
                 return;
             }
-            
+
             // Use InsertOneAsync for single BsonDocument insertion.
+            //classCollection.InsertMany(school.ListClass);
+
             await schoolCollection.InsertOneAsync(school);
+        }
+
+        public void InsertOne(School school)
+        {
+            if (school == null)
+            {
+                return;
+            }
+            if (schoolCollection == null)
+            {
+                return;
+            }
+
+            // Use InsertOneAsync for single BsonDocument insertion.
+            schoolCollection.InsertOne(school);
+
+           // InsertOne(school);
         }
         #endregion
 
         #region Class Area
-        public async Task FindAllClassForSchool(School school)
-        {
-            var schoolid = school._id.Pid;
-            var task =  await   classCollection.FindAsync(x => x.schoolId == schoolid);
-            List<EduClass> list = await task.ToListAsync();
-            school.ListClass = new ObservableCollection<EduClass>();
-            foreach(var item in list)
-            {
-                school.ListClass.Add(item);
-            }
-        }
+        //public async Task FindAllClassForSchool(School school)
+        //{
+        //    var schoolid = school._id.Pid;
+        //    var task =  await   classCollection.FindAsync(x => x.schoolId == schoolid);
+        //    List<EduClass> list = await task.ToListAsync();
+        //    school.ListClass = new ObservableCollection<EduClass>();
+        //    foreach(var item in list)
+        //    {
+        //        school.ListClass.Add(item);
+        //    }
+        //}
 
         public async Task AsyncInsertOne(EduClass inclass)
         {

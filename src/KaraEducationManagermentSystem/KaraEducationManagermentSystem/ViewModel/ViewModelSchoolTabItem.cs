@@ -12,7 +12,7 @@ using CommonNS.ViewModel;
 
 namespace KaraEducationManagermentSystem.ViewModel
 {
-    class ViewModelSchoolTabItem:ViewModelBase
+    class ViewModelSchoolTabItem:ViewModelBase, IManageSchoolBase
     {
         public ViewModelSchoolTabItem()
         {
@@ -25,7 +25,7 @@ namespace KaraEducationManagermentSystem.ViewModel
             // Initalize Open exited school
             OpenSchoolCommand = new RelayCommand(OpenSchool);
 
-            Model = ViewModelMainWindow.SharedModel;
+          
 
         }
 
@@ -49,6 +49,7 @@ namespace KaraEducationManagermentSystem.ViewModel
        SchoolCreateNewViewModel CreateNewSchoolViewModel;
         private ObservableCollection<School> m_ListSchool;
         private KaraMongodbModel m_Model;
+        private School m_SchoolObject;
 
         /// <summary>
         /// Command to Create new school
@@ -61,19 +62,23 @@ namespace KaraEducationManagermentSystem.ViewModel
         /// <summary>
         /// Model
         /// </summary>
-        public KaraMongodbModel Model
+        public KaraMongodbModel EduModel
         {
             get
             {
                 return m_Model;
                 ;
             }
-            internal set
+            set
             {
                 if (m_Model != value)
                 {
                     m_Model = value;
-                   ListSchool = Model.SchoolCollection;
+                    if (m_Model != null)
+                    {
+                        ListSchool = m_Model.SchoolCollection;
+
+                    }
                 }
             }
         }
@@ -94,24 +99,38 @@ namespace KaraEducationManagermentSystem.ViewModel
             CreateNewSchoolViewModel = frmDialog.DataContext as SchoolCreateNewViewModel;
 
             // Set new School Object
-            NewSchoolObject = new School();
+            NewSchoolObject = new School()
+            {
+                AcademicYear = "",
+                ListClassRoom =  new ObservableCollection<EduClassRoom>(),
+                Name="",
+                Teachers= new ObservableCollection<EduTeacher>(),
+                ListClass = new ObservableCollection<EduClass>(),
+                ListSubject = new ObservableCollection<EduSubject>(),
+                TimeTable = new EduTimeTable()
+
+            };
 
             if (CreateNewSchoolViewModel== null)
             {
                 return;
             }
             // Assign Model
-            CreateNewSchoolViewModel.NewSchoolObject = NewSchoolObject;
+            CreateNewSchoolViewModel.SchoolObject = NewSchoolObject;
 
+            
 
             // Show dialog
             frmDialog.ShowDialog();
-
-            if(NewSchoolObject!= null)
+            if (CreateNewSchoolViewModel.CloseWindowFlag == true)
             {
-                await Model.AsyncInsertOne(NewSchoolObject);
+                if (NewSchoolObject != null)
+                {
+                    //await EduModel.AsyncInsertOne(NewSchoolObject);
 
-                ListSchool = Model.SchoolCollection;
+                    await EduModel.AsyncInsertOne(NewSchoolObject);
+                    ListSchool = EduModel.SchoolCollection;
+                }
             }
             // Release object
             CreateNewSchoolViewModel = null;
@@ -122,11 +141,36 @@ namespace KaraEducationManagermentSystem.ViewModel
 
         #region OpenSchool Command
         public RelayCommand OpenSchoolCommand { get; internal set; }
+        public School SchoolObject
+        {
+            get => m_SchoolObject; set
+            {
+                if (m_SchoolObject != value)
+                {
+                    m_SchoolObject = value;
+                    RaisePropertyChanged("SchoolObject");
+                }
+            }
+        
+        }
+      
+
         private void OpenSchool(object param)
         {
             OpenExistedDialog dialog = new OpenExistedDialog();
 
-            dialog.ShowDialog();
+            var dgViewModel = dialog.DataContext as OpenExistedDialogViewModel;
+            if (dgViewModel != null)
+            {
+                dgViewModel.EduModel = EduModel;
+
+                dialog.ShowDialog();
+
+                if (dgViewModel.CloseWindowFlag== true)
+                {
+                    // Add code here
+                }
+            }
         }
         #endregion
     }

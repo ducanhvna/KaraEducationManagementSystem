@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace KaraEducationManagermentSystem.ViewModel.Dialog
 {
-    class SchoolCreateNewViewModel : ViewModelBase
+    class SchoolCreateNewViewModel : ViewModelBase, IManageSchoolBase
     {
 
         /// <summary>
@@ -25,13 +25,13 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         public string Name { get
             {
                 
-                return NewSchoolObject?.Name;
+                return SchoolObject?.Name;
             }
             set
             {
-                if(NewSchoolObject.Name != value)
+                if(SchoolObject.Name != value)
                 {
-                    NewSchoolObject.Name = value;
+                    SchoolObject.Name = value;
                     RaisePropertyChanged("NewSchoolObject");
                 }
             }
@@ -41,13 +41,13 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         {
             get
             {
-                return NewSchoolObject?.AcademicYear;
+                return SchoolObject?.AcademicYear;
             }
             set
             {
-                if(NewSchoolObject?.AcademicYear != value)
+                if(SchoolObject?.AcademicYear != value)
                 {
-                    NewSchoolObject.AcademicYear = value;
+                    SchoolObject.AcademicYear = value;
                     RaisePropertyChanged("AcademicYear");
                 }
             }
@@ -57,7 +57,29 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         /// Next Dialog command
         /// </summary>
         public RelayCommand NextDialogCommand { get; internal set; }
-        public School NewSchoolObject { get; internal set; }
+        private School m_SchoolObject;
+        KaraMongodbModel m_Model;
+
+        public School SchoolObject
+        {
+            get => m_SchoolObject; set
+            {
+                if (m_SchoolObject != value)
+                {
+                    m_SchoolObject = value;
+                    RaisePropertyChanged("SchoolObject");
+                }
+            }
+        }
+
+        public KaraMongodbModel EduModel
+        {
+            get => throw new NotImplementedException();
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         /// <summary>
         /// Next Dialog Command execution
@@ -69,7 +91,7 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
             CreateSchoolItemsDialog dialog = new CreateSchoolItemsDialog();
 
             // Close window
-            CloseWindowFlag = true;
+            CloseWindowFlag = false;
 
             // Get ViewModel
             var viewModel = dialog.DataContext as SchoolCreateItemsViewModel;
@@ -79,14 +101,14 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
             }
 
             // Assign model
-            viewModel.NewSchoolObject = NewSchoolObject;
+            viewModel.SchoolObject = SchoolObject;
 
-            NewSchoolObject = null;
+            SchoolObject = null;
 
             // Show dialog
             var result = dialog.ShowDialog();
 
-
+            CloseWindowFlag = viewModel.CloseWindowFlag;
         }
     }
 }
