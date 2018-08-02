@@ -87,6 +87,9 @@
     <Compile Include="View\Dialog\CreateNewClassRoomDialog.xaml.cs">
       <DependentUpon>CreateNewClassRoomDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Dialog\CreateNewLessonDialog.xaml.cs">
+      <DependentUpon>CreateNewLessonDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Dialog\CreateNewSchoolDialog.xaml.cs">
       <DependentUpon>CreateNewSchoolDialog.xaml</DependentUpon>
     </Compile>
@@ -164,6 +167,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Dialog\CreateNewClassRoomDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialog\CreateNewLessonDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
