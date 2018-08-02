@@ -5,8 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KaraEducationManagermentSystem.View.Dialog"
         mc:Ignorable="d"
-        Title="CreateNewClassDialog" Height="450" Width="800">
+        Title="CreateNewClassDialog" Height="520" Width="500"
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize">
     <Grid>
-        
+        <StackPanel Margin="30,20">
+            <!--Common Infomation-->
+            <Grid Height="80">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="8*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Subject title:" VerticalAlignment="Center"></TextBlock>
+                <TextBox Grid.Column="1" Margin="0,3"></TextBox>
+                <TextBlock Text="Short:" Grid.Row="1" VerticalAlignment="Center"></TextBlock>
+                <TextBox Grid.Column="1" Grid.Row="1" Margin="0,3"></TextBox>
+                <Button Grid.Row="2" Grid.Column="1" Margin="40,3">Custom Field...</Button>
+            </Grid>
+
+            <!--Group Color/Picture-->
+            <GroupBox Margin="0,40,0,0" Header="Color/Picture">
+                <Grid Height="80">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Background="Aqua" Margin="20,10">
+                        <Image ></Image>
+                    </Grid>
+                    <Button Grid.Column="1" Width="90" Height="25" Content="Change"/>
+                </Grid>
+            </GroupBox>
+            <!--Group Color/Picture-->
+            <GroupBox Margin="0,40,0,0" Header="Class teacher">
+                <Grid Height="40">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock VerticalAlignment="Center" Margin="20,0"></TextBlock>
+                    <Button Grid.Column="1" Width="80" Height="20">Change</Button>
+                </Grid>
+            </GroupBox>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="5,15">Grade:</TextBlock>
+                <ComboBox Width="80" Height="20" Margin="20,0,0,0"></ComboBox>
+            </StackPanel>
+            <Grid Height="40" Margin="0,40,0,0">
+                <DockPanel HorizontalAlignment="Right">
+                    <Button Width="70" Height="25">OK</Button>
+                    <Button Width="70" Height="25" Margin="25,0">Cancel</Button>
+                </DockPanel>
+            </Grid>
+        </StackPanel>
     </Grid>
 </Window>

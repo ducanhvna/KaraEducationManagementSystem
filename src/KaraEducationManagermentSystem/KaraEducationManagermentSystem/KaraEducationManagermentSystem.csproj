@@ -114,6 +114,9 @@
     <Compile Include="View\Shared\AddCustomValueDialog.xaml.cs">
       <DependentUpon>AddCustomValueDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Shared\ManagerLessonDialog.xaml.cs">
+      <DependentUpon>ManagerLessonDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SubjectsTabItemContent.xaml.cs">
       <DependentUpon>SubjectsTabItemContent.xaml</DependentUpon>
     </Compile>
@@ -197,6 +200,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Shared\AddCustomValueDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shared\ManagerLessonDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

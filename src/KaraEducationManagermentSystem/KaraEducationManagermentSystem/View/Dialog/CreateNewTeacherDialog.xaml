@@ -7,6 +7,122 @@
         mc:Ignorable="d"
         Title="CreateNewTeacherDialog" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <!--Content Area-->
+        <Grid Margin="40,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <!--Basic Info-->
+            <Grid Margin="0,0,20,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Last name:" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"></TextBlock>
+                <TextBox Grid.Column="1" Width="200" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center">
+
+                </TextBox>
+
+                <TextBlock HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center" Grid.Row="1" Text="First name:"></TextBlock>
+                <TextBox Grid.Column="1" Grid.Row="1" Width="100" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="2" Text="Short:" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"></TextBlock>
+                <DockPanel Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center">
+                    <TextBox  Width="100" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"/>
+                    <CheckBox HorizontalAlignment="Left" Margin="10,2" VerticalAlignment="Center">Male</CheckBox>
+                </DockPanel>
+                <TextBlock Grid.Row="3" Text="Teacher's contract" Margin="0,10"></TextBlock>
+                <DockPanel Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center">
+                    <TextBox  Width="100" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,2" VerticalAlignment="Center">(optional)</TextBlock>
+                </DockPanel>
+            </Grid>
+
+            <!--Contact Info-->
+            <Grid Grid.Column="1" Margin="20,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="8*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Email:" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"></TextBlock>
+                <TextBox Grid.Column="1" Width="200" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center">
+
+                </TextBox>
+
+                <TextBlock HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center" Grid.Row="1" Text="First name:"></TextBlock>
+                <TextBox Grid.Column="1" Grid.Row="1" Width="200" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="2" Text="Short:" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"></TextBlock>
+                <DockPanel Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center">
+                    <TextBox  Width="80" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"/>
+                    <TextBox  Width="80" Margin="20,2" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+                </DockPanel>
+            </Grid>
+
+            <!--Class teacher for the class-->
+            <GroupBox Grid.Row="1" Header="class teacher for the class"
+                      Margin="0,25,20,25">
+                <Button HorizontalAlignment="Right" Content="Change" Width="90" Height="20"></Button>
+            </GroupBox>
+
+            <!--Class room area-->
+            <GroupBox Grid.Row="1" Grid.Column="1" Header="class room"
+                      Margin="20,25,0,25">
+                <Button HorizontalAlignment="Center" Content="Classrooms" Width="190" Height="20"></Button>
+            </GroupBox>
+
+            <!--Group Color-->
+            <GroupBox  Header="Color" Grid.Row="2">
+                <Grid Height="80"
+                      Margin="0,0,0,25">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Background="Aqua" Margin="10">
+                    </Grid>
+                    <Button Grid.Column="1" Width="90" Height="25" Content="Change"/>
+                </Grid>
+            </GroupBox>
+
+            <!--Group Color-->
+            <GroupBox  Header="Color" Grid.Row="2" Grid.Column="1" Margin="20,0,0,0">
+                <Grid Height="80">
+                    <Button HorizontalAlignment="Center" Content="Custom fields" Width="190" Height="20"></Button>
+                </Grid>
+            </GroupBox>
+        </Grid>
+
+        <!--Button Area-->
+        <Grid Grid.Row="1">
+            <DockPanel HorizontalAlignment="Center">
+                <Button Width="60" Height="20" Margin="5">OK</Button>
+                <Button Width="60" Height="20" Margin="5">Cancel</Button>
+            </DockPanel>
+        </Grid>
+
+
     </Grid>
 </Window>
