@@ -24,10 +24,7 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         /// </summary>
         private School m_SchoolObject = new School();
         KaraMongodbModel m_Model;
-        private SubjectsManagerComponentViewModel m_SubjectsManagerViewModel;
-        private ClassManagerComponentViewModel m_ClassManagerViewModel;
-        private ClassroomManagerComponentViewModel m_ClassRoomManagerViewModel;
-        private TeacherManagerComponentViewModel m_TeacherManagerViewModel;
+
 
         /// <summary>
         /// SchoolObject
@@ -39,11 +36,6 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
                 if (m_SchoolObject != value)
                 {
                     m_SchoolObject = value;
-                    SubjectsManagerViewModel.SchoolObject = m_SchoolObject;
-                    ClassManagerViewModel.SchoolObject = m_SchoolObject;
-                    ClassRoomManagerViewModel.SchoolObject = m_SchoolObject;
-                    TeacherManagerViewModel.SchoolObject = m_SchoolObject;
-
                     RaisePropertyChanged("SchoolObject");
                 }
             }
@@ -55,7 +47,13 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         public KaraMongodbModel EduModel
         {
             get => m_Model;
-            set => m_Model = value;
+            set  {
+                if(m_Model!= value)
+                {
+                    m_Model = value;
+                    RaisePropertyChanged("EduModel");
+                }
+            }
         }
 
         #region Contructor
@@ -79,17 +77,7 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
             // Initialize Next command
             NextDialogCommand = new RelayCommand(NextDialog);
 
-            // View model for subobject
-            SubjectsManagerViewModel = new SubjectsManagerComponentViewModel();
 
-            // ClassManagerViewModel
-            ClassManagerViewModel = new ClassManagerComponentViewModel();
-
-            // ClassRoomManagerViewModel
-            ClassRoomManagerViewModel = new ClassroomManagerComponentViewModel();
-
-            // TeacherManagerViewModel
-            TeacherManagerViewModel = new TeacherManagerComponentViewModel();
         }
         #endregion
 
@@ -230,86 +218,6 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         }
 
         #endregion
-        #region Usercontrol ViewModels
-
-        /// <summary>
-        /// SubjectsManagerViewModel
-        /// </summary>
-        public SubjectsManagerComponentViewModel SubjectsManagerViewModel
-        {
-            get
-            {
-                return m_SubjectsManagerViewModel;
-            }
-            set
-            {
-                if(m_SubjectsManagerViewModel!= value)
-                {
-                    m_SubjectsManagerViewModel = value;
-                    RaisePropertyChanged("SubjectsManagerViewModel");
-                }
-            }
-
-        }
-
-        /// <summary>
-        /// ClassManagerViewModel
-        /// </summary>
-        public ClassManagerComponentViewModel ClassManagerViewModel
-        {
-            get
-            {
-                return m_ClassManagerViewModel;
-
-            }
-            set
-            {
-                if(m_ClassManagerViewModel != value)
-                {
-                    m_ClassManagerViewModel = value;
-                    RaisePropertyChanged("ClassManagerViewModel");
-                }
-            }
-        }
-
-        /// <summary>
-        /// ClassRoomManagerViewModel
-        /// </summary>
-        public ClassroomManagerComponentViewModel ClassRoomManagerViewModel
-        {
-            get
-            {
-                return m_ClassRoomManagerViewModel;
-            }
-            set
-            {
-                if(m_ClassRoomManagerViewModel != value)
-                {
-                    m_ClassRoomManagerViewModel = value;
-                    RaisePropertyChanged("ClassRoomManagerViewModel");
-                }
-            }
-        }
-
-        /// <summary>
-        /// TeacherManagerViewModel
-        /// </summary>
-        public TeacherManagerComponentViewModel TeacherManagerViewModel
-        {
-            get
-            {
-                return m_TeacherManagerViewModel;
-            }
-            set
-            {
-                if(m_TeacherManagerViewModel != value)
-                {
-                    m_TeacherManagerViewModel = value;
-                    RaisePropertyChanged("TeacherManagerViewModel");
-                }
-            }
-        }
-
-        #endregion
+       
     }
 }

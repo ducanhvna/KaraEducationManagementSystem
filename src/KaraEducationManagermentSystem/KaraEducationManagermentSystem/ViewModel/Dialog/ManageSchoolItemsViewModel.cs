@@ -39,6 +39,18 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
 
             // Initialize Teacher select command
             TeacherSelectCommand = new RelayCommand(TeacherSelect);
+
+            // View model for subobject
+            SubjectsManagerViewModel = new SubjectsManagerComponentViewModel();
+
+            // ClassManagerViewModel
+            ClassManagerViewModel = new ClassManagerComponentViewModel();
+
+            // ClassRoomManagerViewModel
+            ClassRoomManagerViewModel = new ClassroomManagerComponentViewModel();
+
+            // TeacherManagerViewModel
+            TeacherManagerViewModel = new TeacherManagerComponentViewModel();
         }
 
 
@@ -236,6 +248,13 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
                 if (m_SchoolObject != value)
                 {
                     m_SchoolObject = value;
+
+                    // Set School object for object component
+                    SubjectsManagerViewModel.SchoolObject = m_SchoolObject;
+                    ClassManagerViewModel.SchoolObject = m_SchoolObject;
+                    ClassRoomManagerViewModel.SchoolObject = m_SchoolObject;
+                    TeacherManagerViewModel.SchoolObject = m_SchoolObject;
+
                     RaisePropertyChanged("SchoolObject");
                 }
             }

@@ -7,8 +7,11 @@
              xmlns:vm="clr-namespace:KaraEducationManagermentSystem.ViewModel.Component"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             
-            >
+             DataContext="{DynamicResource vmMain}"
+             x:Name="mainGrid">
+    <UserControl.Resources>
+        <vm:ClassManagerComponentViewModel x:Key="vmMain"></vm:ClassManagerComponentViewModel>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

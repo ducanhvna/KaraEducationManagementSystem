@@ -39,6 +39,33 @@ namespace KaraEducationManagermentSystem.View.Shared
 
         #endregion
 
+        #region Root to User control
+
+        internal static readonly DependencyProperty RootObjectProperty =
+        DependencyProperty.RegisterAttached(
+        "RootObject",
+        typeof(ViewModelMainWindow),
+        typeof(ShareObject),
+        new PropertyMetadata(RootObjectChanged));
+
+        internal static void RootObjectChanged(
+        DependencyObject d,
+        DependencyPropertyChangedEventArgs e)
+        {
+            var uc = d as UserControl;
+            var vm = uc.DataContext as ViewModelSchoolTabItem;
+            if (vm != null)
+            {
+                vm.Parent = e.NewValue as ViewModelMainWindow;
+            }
+        }
+        internal static void SetRootObject(UserControl target, ViewModelMainWindow value)
+        {
+            target.SetValue(RootObjectProperty, value);
+        }
+
+        #endregion
+
         #region Model to UserControl
 
         public static readonly DependencyProperty ModelObjectProperty =

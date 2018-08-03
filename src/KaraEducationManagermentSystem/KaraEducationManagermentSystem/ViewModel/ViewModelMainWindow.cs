@@ -22,8 +22,9 @@ namespace KaraEducationManagermentSystem.ViewModel
         /// <summary>
         /// view model of School tab
         /// </summary>
-        private ViewModelSchoolTabItem m_SchoolViewModel;
-        private School m_SchoolObject = null;
+        //private ViewModelSchoolTabItem m_SchoolViewModel;
+        //private ViewModelClassesTabItem m_ClassViewModel;
+        private School m_SchoolObject;
 
         /// <summary>
         /// Constructor
@@ -31,38 +32,12 @@ namespace KaraEducationManagermentSystem.ViewModel
         public ViewModelMainWindow()
         {
             EduModel = new KaraMongodbModel("", "");
-
-           
-            // Initialize School View model
-            //SchoolViewModel = new ViewModelSchoolTabItem();
-
-            // Assign model
-            //SchoolViewModel.Model = m_Model;
         }
+
 
         /// <summary>
-        /// View Model for school Tab
+        /// SchoolObject
         /// </summary>
-        public ViewModelSchoolTabItem SchoolViewModel
-        {
-            get
-            {
-                return m_SchoolViewModel;
-            }
-            set
-            {
-                if(m_SchoolViewModel != value)
-                {
-                    m_SchoolViewModel = value;
-                    if (m_SchoolViewModel != null)
-                    {
-                        m_SchoolViewModel.EduModel = m_Model;
-                    }
-                    RaisePropertyChanged("SchoolViewModel");
-                }
-            }
-        }
-
         public School SchoolObject
         {
             get => m_SchoolObject; set
@@ -74,6 +49,10 @@ namespace KaraEducationManagermentSystem.ViewModel
                 }
             }
         }
+
+        /// <summary>
+        /// EduModel
+        /// </summary>
         public KaraMongodbModel EduModel
         {
             get => m_Model;

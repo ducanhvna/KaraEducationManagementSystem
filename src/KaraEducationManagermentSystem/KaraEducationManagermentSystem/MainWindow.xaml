@@ -17,22 +17,30 @@
     <Grid x:Name="mainGrid">
         <TabControl>
             <TabItem Header="School" >
-                <v:SchoolTabItemContent viewShare:ShareObject.ModelObject="{Binding ElementName=mainWindow, Path=DataContext.EduModel}"
-                                        >
+                <v:SchoolTabItemContent viewShare:ShareObject.RootObject="{Binding ElementName=mainWindow, Path=DataContext}"
+                                      >
                     
                 </v:SchoolTabItemContent>
             </TabItem>
             <TabItem Header="Subjects">
-                <v:SubjectsTabItemContent></v:SubjectsTabItemContent>
+                <v:SubjectsTabItemContent viewShare:ShareObject.ModelObject="{Binding ElementName=mainWindow, Path=DataContext.EduModel}"
+                                        viewShare:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}">
+                </v:SubjectsTabItemContent>
             </TabItem>
             <TabItem Header="Classes">
-                <v:ClassesTabItemContent></v:ClassesTabItemContent>
+                <v:ClassesTabItemContent viewShare:ShareObject.ModelObject="{Binding ElementName=mainWindow, Path=DataContext.EduModel}"
+                                        viewShare:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}">
+                </v:ClassesTabItemContent>
             </TabItem>
             <TabItem Header="Class Room">
-                <v:ClassRoomTabItemContent></v:ClassRoomTabItemContent>
+                <v:ClassRoomTabItemContent viewShare:ShareObject.ModelObject="{Binding ElementName=mainWindow, Path=DataContext.EduModel}"
+                                        viewShare:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}">
+                </v:ClassRoomTabItemContent>
             </TabItem>
             <TabItem Header="Teachers">
-                <v:TeacherTabItemContent></v:TeacherTabItemContent>
+                <v:TeacherTabItemContent viewShare:ShareObject.ModelObject="{Binding ElementName=mainWindow, Path=DataContext.EduModel}"
+                                        viewShare:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}">
+                </v:TeacherTabItemContent>
             </TabItem>
             <TabItem Header="Time table">
                 

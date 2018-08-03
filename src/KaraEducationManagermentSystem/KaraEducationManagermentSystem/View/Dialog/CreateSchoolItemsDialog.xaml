@@ -65,7 +65,7 @@
                     </Style>
                 </Grid.Style>
                 <!--Subject Content Area-->
-                <component:SubjectsManagerComponent DataContext="{Binding SubjectsManagerViewModel}">
+                <component:SubjectsManagerComponent share:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}">
 
                 </component:SubjectsManagerComponent>
             </Grid>
@@ -81,7 +81,7 @@
                     </Style>
                 </Grid.Style>
                 <!--Class content Area-->
-                <component:ClassManagerComponent DataContext="{Binding ClassManagerViewModel}">
+                <component:ClassManagerComponent share:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}">
                     
                 </component:ClassManagerComponent>
             </Grid>
@@ -97,7 +97,7 @@
                     </Style>
                 </Grid.Style>
                 <!--Class room content Area-->
-                <component:ClassroomManagerComponent DataContext="{Binding ClassRoomManagerViewModel}">
+                <component:ClassroomManagerComponent share:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}">
                  
                 </component:ClassroomManagerComponent>
             </Grid>
@@ -114,7 +114,7 @@
                 </Grid.Style>
                 
                 <!--Teacher content Area-->
-                <component:TeacherManagerComponent DataContext="{Binding TeacherManagerViewModel}">
+                <component:TeacherManagerComponent share:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}">
                   
                 </component:TeacherManagerComponent>
             </Grid>

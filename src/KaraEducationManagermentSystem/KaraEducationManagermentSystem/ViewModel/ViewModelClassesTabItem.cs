@@ -1,6 +1,7 @@
 ﻿using CommonNS.Helpers;
 using CommonNS.ViewModel;
 using KaraEducationManagermentSystem.View.Dialog;
+using KaraEducationManagermentSystem.ViewModel.Dialog;
 using KaraMongoModelNS;
 using System;
 using System.Collections.Generic;
@@ -27,14 +28,7 @@ namespace KaraEducationManagermentSystem.ViewModel
 
         #endregion
 
-        #region Show Manage Dialog
-        /// <summary>
-        /// ShowManageClassCommand
-        /// </summary>
-        public RelayCommand ManageClassCollectionsCommand
-        {
-            get; internal set;
-        }
+        
         private School m_SchoolObject;
         KaraMongodbModel m_Model;
 
@@ -61,7 +55,14 @@ namespace KaraEducationManagermentSystem.ViewModel
                 }
             }
         }
-
+        #region Show Manage Dialog
+        /// <summary>
+        /// ShowManageClassCommand
+        /// </summary>
+        public RelayCommand ManageClassCollectionsCommand
+        {
+            get; internal set;
+        }
         /// <summary>
         /// Show Manage class command execution
         /// </summary>
@@ -69,8 +70,27 @@ namespace KaraEducationManagermentSystem.ViewModel
         private void ManageClassCollections(object param)
         {
             ManageSchoolItemDialog dialog = new ManageSchoolItemDialog();
+            // Get view model 
 
-            dialog.ShowDialog();
+            var vm = dialog.DataContext as ManageSchoolItemsViewModel;
+            if (vm != null)
+
+            {
+                // Set school Object
+                vm.SchoolObject = SchoolObject;
+
+                // Set model
+                vm.EduModel = EduModel;
+
+                // Set focus index
+                vm.CurrentItemIndex = 1;
+
+                // Show dialog
+                dialog.ShowDialog();
+
+                // Do nothing after close
+
+            }
         }
 
         #endregion

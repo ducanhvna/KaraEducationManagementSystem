@@ -7,10 +7,12 @@
           xmlns:component="clr-namespace:KaraEducationManagermentSystem.View.Component"
         xmlns:helpers="clr-namespace:CommonNS.Helpers;assembly=LibCommon"
         xmlns:vm="clr-namespace:KaraEducationManagermentSystem.ViewModel.Dialog"
+         xmlns:share="clr-namespace:KaraEducationManagermentSystem.View.Shared"
         mc:Ignorable="d"
         Title="ManageSchoolItemDialog" Height="450" Width="800"
         DataContext="{DynamicResource vmDialog}"
-        helpers:DialogCloser.DialogResult="{Binding CloseWindowFlag}">
+        helpers:DialogCloser.DialogResult="{Binding CloseWindowFlag}"
+        x:Name="mainWindow">
     <Window.Resources>
         <vm:ManageSchoolItemsViewModel x:Key="vmDialog"></vm:ManageSchoolItemsViewModel>
     </Window.Resources>
@@ -50,61 +52,73 @@
             </StackPanel>
 
             <!--Content Area-->
-            <Grid Grid.Column="1" Margin="20,0">
+            <Grid Grid.Column="1" Margin="20,0" >
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Visibility" Value="Hidden" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=CurrentItemIndex}" Value="0">
+                                <Setter Property="Visibility" Value="Visible" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
                 <!--Subject Content Area-->
-                <component:SubjectsManagerComponent >
-                    <component:SubjectsManagerComponent.Style>
-                        <Style TargetType="component:SubjectsManagerComponent">
-                            <Setter Property="Visibility" Value="Hidden" />
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding Path=CurrentItemIndex}" Value="0">
-                                    <Setter Property="Visibility" Value="Visible" />
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </component:SubjectsManagerComponent.Style>
+                <component:SubjectsManagerComponent share:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}"
+                                                    share:ShareObject.ModelObject="{Binding ElementName=mainWindow, Path=DataContext.EduModel}">
+
                 </component:SubjectsManagerComponent>
-
+            </Grid>
+            <Grid Grid.Column="1" Margin="20,0">
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Visibility" Value="Hidden" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=CurrentItemIndex}" Value="1">
+                                <Setter Property="Visibility" Value="Visible" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
                 <!--Class content Area-->
-                <component:ClassManagerComponent>
-                    <component:ClassManagerComponent.Style>
-                        <Style TargetType="component:ClassManagerComponent">
-                            <Setter Property="Visibility" Value="Hidden" />
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding Path=CurrentItemIndex}" Value="1">
-                                    <Setter Property="Visibility" Value="Visible" />
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </component:ClassManagerComponent.Style>
-                </component:ClassManagerComponent>
+                <component:ClassManagerComponent share:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}"
+                                                 share:ShareObject.ModelObject="{Binding ElementName=mainWindow, Path=DataContext.EduModel}">
 
+                </component:ClassManagerComponent>
+            </Grid>
+            <Grid Grid.Column="1" Margin="20,0">
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Visibility" Value="Hidden" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=CurrentItemIndex}" Value="2">
+                                <Setter Property="Visibility" Value="Visible" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
                 <!--Class room content Area-->
-                <component:ClassroomManagerComponent>
-                    <component:ClassroomManagerComponent.Style>
-                        <Style TargetType="component:ClassroomManagerComponent">
-                            <Setter Property="Visibility" Value="Hidden" />
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding Path=CurrentItemIndex}" Value="2">
-                                    <Setter Property="Visibility" Value="Visible" />
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </component:ClassroomManagerComponent.Style>
+                <component:ClassroomManagerComponent share:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}"
+                                                     share:ShareObject.ModelObject="{Binding ElementName=mainWindow, Path=DataContext.EduModel}">
+
                 </component:ClassroomManagerComponent>
+            </Grid>
+            <Grid Grid.Column="1" Margin="20,0">
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Visibility" Value="Hidden" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=CurrentItemIndex}" Value="3">
+                                <Setter Property="Visibility" Value="Visible" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
 
                 <!--Teacher content Area-->
-                <component:TeacherManagerComponent>
-                    <component:TeacherManagerComponent.Style>
-                        <Style TargetType="component:TeacherManagerComponent">
-                            <Setter Property="Visibility" Value="Hidden" />
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding Path=CurrentItemIndex}" Value="3">
-                                    <Setter Property="Visibility" Value="Visible" />
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </component:TeacherManagerComponent.Style>
+                <component:TeacherManagerComponent share:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}"
+                                                   share:ShareObject.ModelObject="{Binding ElementName=mainWindow, Path=DataContext.EduModel}">
+
                 </component:TeacherManagerComponent>
             </Grid>
         </Grid>

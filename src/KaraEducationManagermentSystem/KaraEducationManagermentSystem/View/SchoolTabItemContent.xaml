@@ -52,7 +52,7 @@
             <TreeView>
                 
             </TreeView>
-            <DataGrid Grid.Column="1" ItemsSource="{Binding ListSchool}"></DataGrid>
+            <DataGrid Grid.Column="1" SelectedItem="{Binding SchoolObject}" ItemsSource="{Binding ListSchool}"></DataGrid>
         </Grid>
     </Grid>
 </UserControl>

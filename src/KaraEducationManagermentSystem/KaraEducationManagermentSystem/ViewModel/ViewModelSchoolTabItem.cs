@@ -14,19 +14,34 @@ namespace KaraEducationManagermentSystem.ViewModel
 {
     class ViewModelSchoolTabItem:ViewModelBase, IManageSchoolBase
     {
+        ViewModelMainWindow m_Parent = null;
+        public ViewModelMainWindow Parent
+        {
+            get
+            {
+                return m_Parent;
+            }
+            internal set
+            {
+                if (m_Parent != value)
+                {
+                    m_Parent = value;
+                    if (m_Parent.EduModel != null)
+                    {
+                        ListSchool = m_Parent.EduModel.SchoolCollection;
+
+                    }
+                }
+            }
+        }
         public ViewModelSchoolTabItem()
         {
-
-
 
             // Initialize Create new school Command
             CreateNewSchoolCommand = new RelayCommand(CreateNewSchool);
 
             // Initalize Open exited school
             OpenSchoolCommand = new RelayCommand(OpenSchool);
-
-          
-
         }
 
         #region Initalize Display Area
@@ -48,8 +63,8 @@ namespace KaraEducationManagermentSystem.ViewModel
 
        SchoolCreateNewViewModel CreateNewSchoolViewModel;
         private ObservableCollection<School> m_ListSchool;
-        private KaraMongodbModel m_Model;
-        private School m_SchoolObject;
+    
+       
 
         /// <summary>
         /// Command to Create new school
@@ -66,17 +81,16 @@ namespace KaraEducationManagermentSystem.ViewModel
         {
             get
             {
-                return m_Model;
-                ;
+                return Parent.EduModel;
             }
             set
             {
-                if (m_Model != value)
+                if (Parent.EduModel != value)
                 {
-                    m_Model = value;
-                    if (m_Model != null)
+                    Parent.EduModel = value;
+                    if (Parent.EduModel != null)
                     {
-                        ListSchool = m_Model.SchoolCollection;
+                        ListSchool = Parent.EduModel.SchoolCollection;
 
                     }
                 }
@@ -128,17 +142,24 @@ namespace KaraEducationManagermentSystem.ViewModel
         #endregion
 
         #region OpenSchool Command
+        /// <summary>
+        /// OpenSchoolCommand
+        /// </summary>
         public RelayCommand OpenSchoolCommand { get; internal set; }
         public School SchoolObject
         {
-            get => m_SchoolObject; set
+            get {
+                return Parent?.SchoolObject;
+            }
+            set
             {
-                if (m_SchoolObject != value)
+                if(Parent.SchoolObject != value)
                 {
-                    m_SchoolObject = value;
+                    Parent.SchoolObject = value;
                     RaisePropertyChanged("SchoolObject");
                 }
             }
+           
         
         }
       
