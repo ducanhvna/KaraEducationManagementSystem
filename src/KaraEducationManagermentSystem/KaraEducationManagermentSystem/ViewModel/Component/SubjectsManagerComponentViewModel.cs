@@ -18,6 +18,7 @@ namespace KaraEducationManagermentSystem.ViewModel.Component
         KaraMongodbModel m_Model;
         public SubjectsManagerComponentViewModel()
         {
+            // Initialize Subject Command
             AddNewSubjectCommand = new RelayCommand(AddNewSubject);
         }
         public School SchoolObject
@@ -52,9 +53,19 @@ namespace KaraEducationManagermentSystem.ViewModel.Component
         {
             CreateNewSubjectDialog dialog = new CreateNewSubjectDialog();
             var vm = dialog.DataContext as CreateNewSubjectViewModel;
-            dialog.ShowDialog();
+            if (vm != null)
+            {
+                dialog.ShowDialog();
+                var dgResult = vm.CloseWindowFlag;
 
-            SchoolObject.ListSubject.Add (vm.NewSubject);
+                if (dgResult == true)
+                {
+                    if (vm.NewSubject != null)
+                    {
+                        SchoolObject.ListSubject.Add(vm.NewSubject);
+                    }
+                }
+            }
         }
 
        

@@ -5,10 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KaraEducationManagermentSystem.View.Dialog"
         xmlns:vm="clr-namespace:KaraEducationManagermentSystem.ViewModel.Dialog"
+        xmlns:helpers="clr-namespace:CommonNS.Helpers;assembly=LibCommon"
         mc:Ignorable="d"
         Title="CreateNewSubjectDialog" Height="550" Width="800"
         WindowStartupLocation="CenterScreen"
-        DataContext="{DynamicResource vmMain}">
+        DataContext="{DynamicResource vmMain}"
+        helpers:DialogCloser.DialogResult="{Binding CloseWindowFlag}">
     <Window.Resources>
         <vm:CreateNewSubjectViewModel x:Key="vmMain"/>
     </Window.Resources>
@@ -52,8 +54,8 @@
             </GroupBox>
             <Grid Height="40" Margin="0,40,0,0">
                 <DockPanel HorizontalAlignment="Right">
-                    <Button Width="70" Height="25">OK</Button>
-                    <Button Width="70" Height="25" Margin="25,0">Cancel</Button>
+                    <Button Width="70" Height="25" Command="{Binding CreateNewCommand}">OK</Button>
+                    <Button Width="70" Height="25" Margin="25,0" Command="{Binding CloseWithoutSaveCommand}">Cancel</Button>
                 </DockPanel>
             </Grid>
         </StackPanel>

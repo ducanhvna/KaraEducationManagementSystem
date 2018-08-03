@@ -1,5 +1,6 @@
 ﻿using CommonNS.Helpers;
 using CommonNS.ViewModel;
+using KaraEducationManagermentSystem.ViewModel.Component;
 using KaraMongoModelNS;
 using System;
 using System.Collections.Generic;
@@ -9,12 +10,17 @@ using System.Threading.Tasks;
 
 namespace KaraEducationManagermentSystem.ViewModel.Dialog
 {
-    class ManageSchoolItemsViewModel:ViewModelBase
+    class ManageSchoolItemsViewModel:ViewModelBase,IManageSchoolBase
     {
         /// <summary>
         /// Current selected items
         /// </summary>
         private int m_currentItemIndex;
+        private TeacherManagerComponentViewModel m_TeacherManagerViewModel;
+        private ClassroomManagerComponentViewModel m_ClassRoomManagerViewModel;
+        private ClassManagerComponentViewModel m_ClassManagerViewModel;
+        private SubjectsManagerComponentViewModel m_SubjectsManagerViewModel;
+
         public School FocusSchoolObject { get; internal set; }
 
         /// <summary>
@@ -131,6 +137,125 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         }
 
 
+
+        #endregion
+
+        #region Usercontrol ViewModels
+
+        /// <summary>
+        /// SubjectsManagerViewModel
+        /// </summary>
+        public SubjectsManagerComponentViewModel SubjectsManagerViewModel
+        {
+            get
+            {
+                return m_SubjectsManagerViewModel;
+            }
+            set
+            {
+                if (m_SubjectsManagerViewModel != value)
+                {
+                    m_SubjectsManagerViewModel = value;
+                    RaisePropertyChanged("SubjectsManagerViewModel");
+                }
+            }
+
+        }
+
+        /// <summary>
+        /// ClassManagerViewModel
+        /// </summary>
+        public ClassManagerComponentViewModel ClassManagerViewModel
+        {
+            get
+            {
+                return m_ClassManagerViewModel;
+
+            }
+            set
+            {
+                if (m_ClassManagerViewModel != value)
+                {
+                    m_ClassManagerViewModel = value;
+                    RaisePropertyChanged("ClassManagerViewModel");
+                }
+            }
+        }
+
+        /// <summary>
+        /// ClassRoomManagerViewModel
+        /// </summary>
+        public ClassroomManagerComponentViewModel ClassRoomManagerViewModel
+        {
+            get
+            {
+                return m_ClassRoomManagerViewModel;
+            }
+            set
+            {
+                if (m_ClassRoomManagerViewModel != value)
+                {
+                    m_ClassRoomManagerViewModel = value;
+                    RaisePropertyChanged("ClassRoomManagerViewModel");
+                }
+            }
+        }
+
+        /// <summary>
+        /// TeacherManagerViewModel
+        /// </summary>
+        public TeacherManagerComponentViewModel TeacherManagerViewModel
+        {
+            get
+            {
+                return m_TeacherManagerViewModel;
+            }
+            set
+            {
+                if (m_TeacherManagerViewModel != value)
+                {
+                    m_TeacherManagerViewModel = value;
+                    RaisePropertyChanged("TeacherManagerViewModel");
+                }
+            }
+        }
+
+        #endregion
+
+        #region Common Infomation
+        private School m_SchoolObject;
+        KaraMongodbModel m_Model;
+
+        /// <summary>
+        /// School Object
+        /// </summary>
+        public School SchoolObject
+        {
+            get => m_SchoolObject; set
+            {
+                if (m_SchoolObject != value)
+                {
+                    m_SchoolObject = value;
+                    RaisePropertyChanged("SchoolObject");
+                }
+            }
+        }
+
+        /// <summary>
+        /// EduModel
+        /// </summary>
+        public KaraMongodbModel EduModel
+        {
+            get => m_Model;
+            set
+            {
+                if (m_Model != value)
+                {
+                    m_Model = value;
+                    RaisePropertyChanged("EduModel");
+                }
+            }
+        }
 
         #endregion
     }

@@ -105,8 +105,11 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         #region Ignore command
         public RelayCommand IgnoreActionCommand { get; internal set; }
         public School SchoolObject { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        
 
+        /// <summary>
+        /// IgnoreAction
+        /// </summary>
+        /// <param name="param"></param>
         private void IgnoreAction(object param)
         {
             SelectedSchool = null;

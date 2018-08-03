@@ -14,13 +14,13 @@
         <!--List Items Areas-->
         <StackPanel Margin="10">
             <TextBlock>Enter Class room</TextBlock>
-            <DataGrid></DataGrid>
+            <DataGrid ItemsSource="{Binding SchoolObject.ListClassRoom}"></DataGrid>
         </StackPanel>
 
         <!--Buttons Area-->
         <StackPanel Grid.Column="1" Margin="35,30">
             <!--New button-->
-            <Button Height="25" HorizontalContentAlignment="Left" Margin="0,3">
+            <Button Height="25" HorizontalContentAlignment="Left" Margin="0,3" Command="{Binding AddNewClassRoomCommand}">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,0">
                     <Image Source="/Resources/icon/add_64.png" />
                     <TextBlock Margin="10,0">New</TextBlock>

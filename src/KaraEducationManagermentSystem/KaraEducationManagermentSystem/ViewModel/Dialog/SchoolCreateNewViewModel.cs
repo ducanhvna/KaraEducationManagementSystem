@@ -19,6 +19,7 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         /// </summary>
         public SchoolCreateNewViewModel()
         {
+            // Initialize new object
             SchoolObject = new School()
             {
                 AcademicYear = "",
@@ -32,6 +33,12 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
             };
             // Initialize NextDialog command
             NextDialogCommand = new RelayCommand(NextDialog);
+
+            // Initizelize Close buton Command
+            CloseWithoutSaveCommand = new RelayCommand(CloseWithoutSave);
+
+            // Initialize Ok button command
+            CreateNewCommand = new RelayCommand(CreateNew);
         }
         #region Display Area
         public string Name { get
@@ -122,5 +129,38 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
 
             CloseWindowFlag = viewModel.CloseWindowFlag;
         }
+
+        #region CloseWithoutSaveCommand
+        /// <summary>
+        /// CloseWithoutSaveCommand
+        /// </summary>
+        public RelayCommand CloseWithoutSaveCommand { get; internal set; }
+
+        /// <summary>
+        /// CloseWithoutSave command execution
+        /// </summary>
+        /// <param name="param"></param>
+        private void CloseWithoutSave(object param)
+        {
+            SchoolObject = null;
+            CloseWindowFlag = false;
+        }
+        #endregion
+
+        #region CreateNewCommand
+        /// <summary>
+        /// Create new command
+        /// </summary>
+        public RelayCommand CreateNewCommand { get; internal set; }
+
+        /// <summary>
+        /// Create new command execution
+        /// </summary>
+        /// <param name="param"></param>
+        private void CreateNew(object param)
+        {
+            CloseWindowFlag = true;
+        }
+        #endregion
     }
 }

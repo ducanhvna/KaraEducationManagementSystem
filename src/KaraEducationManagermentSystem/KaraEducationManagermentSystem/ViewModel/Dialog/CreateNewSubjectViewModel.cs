@@ -1,4 +1,5 @@
-﻿using CommonNS.ViewModel;
+﻿using CommonNS.Helpers;
+using CommonNS.ViewModel;
 using KaraMongoModelNS;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,14 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
 
         public CreateNewSubjectViewModel()
         {
+            // Create new subject
             NewSubject = new EduSubject();
+
+            // Initialize OK button command
+            CreateNewCommand = new RelayCommand(CreateNew);
+
+            // Initialie Cancel button command
+            CloseWithoutSaveCommand = new RelayCommand(CloseWithoutSave);
         }
 
         public School SchoolObject
@@ -60,5 +68,38 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
                 }
             }
         }
+
+        #region CloseWithoutSaveCommand
+        /// <summary>
+        /// CloseWithoutSaveCommand
+        /// </summary>
+        public RelayCommand CloseWithoutSaveCommand { get; internal set; }
+
+        /// <summary>
+        /// CloseWithoutSave command execution
+        /// </summary>
+        /// <param name="param"></param>
+        private void CloseWithoutSave(object param)
+        {
+            NewSubject = null;
+            CloseWindowFlag = false;
+        }
+        #endregion
+
+        #region CreateNewCommand
+        /// <summary>
+        /// Create new command
+        /// </summary>
+        public RelayCommand CreateNewCommand { get; internal set; }
+
+        /// <summary>
+        /// Create new command execution
+        /// </summary>
+        /// <param name="param"></param>
+        private void CreateNew(object param)
+        {
+            CloseWindowFlag = true;
+        }
+        #endregion
     }
 }

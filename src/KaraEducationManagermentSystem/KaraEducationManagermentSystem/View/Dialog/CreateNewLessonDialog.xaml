@@ -4,9 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KaraEducationManagermentSystem.View.Dialog"
+        xmlns:helpers="clr-namespace:CommonNS.Helpers;assembly=LibCommon"
+        xmlns:vm="clr-namespace:KaraEducationManagermentSystem.ViewModel.Dialog"
         mc:Ignorable="d"
         Title="CreateNewLessonDialog" Height="600" Width="800"
-        WindowStyle="ToolWindow">
+        WindowStyle="ToolWindow"
+        helpers:DialogCloser.DialogResult="{Binding CloseWindowFlag}"
+        DataContext="{DynamicResource vmMain}">
+    <Window.Resources>
+        <vm:CreatenewLessonDialogViewModel x:Key="vmMain"/>
+    </Window.Resources>
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -114,13 +121,13 @@
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal">
                 <!--Cancel button-->
-                <Button Width="80" Height="20" Margin="20,0">Calcel</Button>
+                <Button Width="80" Height="20" Margin="20,0" Command="{Binding CloseWithoutSaveCommand}">Cancel</Button>
                 <!--Help button-->
                 <Button Width="80" Height="20">Help</Button>
 
             </StackPanel>
             <!--Ok button-->
-            <Button Grid.Column="1" Width="80" Height="20">OK</Button>
+            <Button Grid.Column="1" Width="80" Height="20" Command="{Binding CreateNewCommand}">OK</Button>
 
         </Grid>
     </Grid>

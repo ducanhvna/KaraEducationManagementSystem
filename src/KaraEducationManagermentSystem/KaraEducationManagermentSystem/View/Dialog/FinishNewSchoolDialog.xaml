@@ -9,7 +9,8 @@
         mc:Ignorable="d"
         Title="FinishNewSchoolDialog" Height="450" Width="800"
         DataContext="{DynamicResource vmDialog}"
-        helpers:DialogCloser.DialogResult="{Binding CloseWindowFlag}">
+        helpers:DialogCloser.DialogResult="{Binding CloseWindowFlag}"
+        WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <vm:SchoolFinishNewViewModel x:Key="vmDialog"/>
     </Window.Resources>
@@ -84,28 +85,18 @@
                         <TextBlock Margin="3,0,0,0">help</TextBlock>
                     </StackPanel>
                 </Button>
-                <Button Width="80" Margin="5,10">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/Resources/icon/add_64.png" />
-                        <TextBlock Margin="3,0,0,0">Save</TextBlock>
-                    </StackPanel>
-                </Button>
-                <Button Width="80" Margin="5,10">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/Resources/icon/add_64.png" />
-                        <TextBlock Margin="3,0,0,0">Import</TextBlock>
-                    </StackPanel>
-                </Button>
+             
+               
             </StackPanel>
             <StackPanel Grid.Column="2" Orientation="Horizontal">
-                <Button Width="80" Margin="5,10">Previous</Button>
+                <Button Width="80" Margin="5,10" Command="{Binding PreviousDialogCommand}">Previous</Button>
                 <Button Width="80" Margin="5,10" Command="{Binding FinishCreateNewSchoolCommand}">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Resources/icon/add_64.png" />
                         <TextBlock Margin="3,0,0,0">Finish</TextBlock>
                     </StackPanel>
                 </Button>
-                <Button Width="80" Margin="5,10">Close</Button>
+                <Button Width="80" Margin="5,10" Command="{Binding CloseWithouSaveCommand}">Close</Button>
             </StackPanel>
         </Grid>
     </Grid>

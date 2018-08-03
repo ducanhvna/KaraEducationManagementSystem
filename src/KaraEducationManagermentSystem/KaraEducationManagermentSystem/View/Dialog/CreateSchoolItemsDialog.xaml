@@ -9,12 +9,11 @@
         xmlns:share="clr-namespace:KaraEducationManagermentSystem.View.Shared"
         xmlns:vm="clr-namespace:KaraEducationManagermentSystem.ViewModel.Dialog"
         mc:Ignorable="d"
-       
         Title="CreateSchoolItemsDialog" Height="450" Width="800"
         WindowStartupLocation="CenterScreen"
         helpers:DialogCloser.DialogResult="{Binding CloseWindowFlag}"
         x:Name="mainWindow"
-         DataContext="{DynamicResource vmDialog}">
+        DataContext="{DynamicResource vmDialog}">
     <Window.Resources>
         <vm:SchoolCreateItemsViewModel x:Key="vmDialog"></vm:SchoolCreateItemsViewModel>
     </Window.Resources>
@@ -82,7 +81,9 @@
                     </Style>
                 </Grid.Style>
                 <!--Class content Area-->
-                <component:ClassManagerComponent></component:ClassManagerComponent>
+                <component:ClassManagerComponent DataContext="{Binding ClassManagerViewModel}">
+                    
+                </component:ClassManagerComponent>
             </Grid>
             <Grid Grid.Column="1" Margin="20,0">
                 <Grid.Style>
@@ -96,7 +97,7 @@
                     </Style>
                 </Grid.Style>
                 <!--Class room content Area-->
-                <component:ClassroomManagerComponent>
+                <component:ClassroomManagerComponent DataContext="{Binding ClassRoomManagerViewModel}">
                  
                 </component:ClassroomManagerComponent>
             </Grid>
@@ -111,8 +112,9 @@
                         </Style.Triggers>
                     </Style>
                 </Grid.Style>
+                
                 <!--Teacher content Area-->
-                <component:TeacherManagerComponent>
+                <component:TeacherManagerComponent DataContext="{Binding TeacherManagerViewModel}">
                   
                 </component:TeacherManagerComponent>
             </Grid>
@@ -130,9 +132,9 @@
                 <Button Height="25" Width="50" Margin="10,0">Import</Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Right">
-                <Button Height="25" Width="50" Margin="10,0" HorizontalAlignment="Right">Previous</Button>
+                <Button Height="25" Width="50" Margin="10,0" HorizontalAlignment="Right" Command="{Binding PreviousDialogCommand}">Previous</Button>
                 <Button Height="25" Width="50" Margin="10,0" HorizontalAlignment="Right" Command="{Binding NextDialogCommand}">Next</Button>
-                <Button Height="25" Width="50" Margin="10,0" HorizontalAlignment="Right">Close</Button>
+                <Button Height="25" Width="50" Margin="10,0" HorizontalAlignment="Right" Command="{Binding CloseWithoutSaveCommand}">Close</Button>
             </StackPanel>
         </Grid>
     </Grid>

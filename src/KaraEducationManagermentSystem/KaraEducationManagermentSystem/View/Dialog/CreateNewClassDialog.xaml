@@ -4,9 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KaraEducationManagermentSystem.View.Dialog"
+        xmlns:vm="clr-namespace:KaraEducationManagermentSystem.ViewModel.Dialog"
+        xmlns:helpers="clr-namespace:CommonNS.Helpers;assembly=LibCommon"
         mc:Ignorable="d"
         Title="CreateNewClassDialog" Height="520" Width="500"
-        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize">
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize"
+        DataContext="{DynamicResource vmMain}"
+        helpers:DialogCloser.DialogResult="{Binding CloseWindowFlag}">
+    <Window.Resources>
+        <vm:CreateNewClassDialogViewModel x:Key="vmMain"/>
+    </Window.Resources>
     <Grid>
         <StackPanel Margin="30,20">
             <!--Common Infomation-->
@@ -57,8 +64,8 @@
             </StackPanel>
             <Grid Height="40" Margin="0,40,0,0">
                 <DockPanel HorizontalAlignment="Right">
-                    <Button Width="70" Height="25">OK</Button>
-                    <Button Width="70" Height="25" Margin="25,0">Cancel</Button>
+                    <Button Width="70" Height="25" Command="{Binding CreateNewCommand}">OK</Button>
+                    <Button Width="70" Height="25" Margin="25,0" Command="{Binding CloseWithoutSaveCommand}">Cancel</Button>
                 </DockPanel>
             </Grid>
         </StackPanel>

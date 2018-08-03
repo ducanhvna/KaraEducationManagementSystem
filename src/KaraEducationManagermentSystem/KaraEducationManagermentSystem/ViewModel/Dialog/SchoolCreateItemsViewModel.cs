@@ -14,12 +14,24 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
 {
     class SchoolCreateItemsViewModel : ViewModelBase, IManageSchoolBase
     {
+        /// <summary>
+        /// Current Item Index
+        /// </summary>
         private int m_currentItemIndex = 0;
 
+        /// <summary>
+        /// School Object
+        /// </summary>
         private School m_SchoolObject = new School();
         KaraMongodbModel m_Model;
         private SubjectsManagerComponentViewModel m_SubjectsManagerViewModel;
+        private ClassManagerComponentViewModel m_ClassManagerViewModel;
+        private ClassroomManagerComponentViewModel m_ClassRoomManagerViewModel;
+        private TeacherManagerComponentViewModel m_TeacherManagerViewModel;
 
+        /// <summary>
+        /// SchoolObject
+        /// </summary>
         public School SchoolObject
         {
             get => m_SchoolObject; set
@@ -28,10 +40,18 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
                 {
                     m_SchoolObject = value;
                     SubjectsManagerViewModel.SchoolObject = m_SchoolObject;
+                    ClassManagerViewModel.SchoolObject = m_SchoolObject;
+                    ClassRoomManagerViewModel.SchoolObject = m_SchoolObject;
+                    TeacherManagerViewModel.SchoolObject = m_SchoolObject;
+
                     RaisePropertyChanged("SchoolObject");
                 }
             }
         }
+
+        /// <summary>
+        /// EduModel
+        /// </summary>
         public KaraMongodbModel EduModel
         {
             get => m_Model;
@@ -39,6 +59,9 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         }
 
         #region Contructor
+        /// <summary>
+        /// SchoolCreateItemsViewModel
+        /// </summary>
         public SchoolCreateItemsViewModel()
         {
             // Initialize Subject select command 
@@ -56,11 +79,24 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
             // Initialize Next command
             NextDialogCommand = new RelayCommand(NextDialog);
 
+            // View model for subobject
             SubjectsManagerViewModel = new SubjectsManagerComponentViewModel();
+
+            // ClassManagerViewModel
+            ClassManagerViewModel = new ClassManagerComponentViewModel();
+
+            // ClassRoomManagerViewModel
+            ClassRoomManagerViewModel = new ClassroomManagerComponentViewModel();
+
+            // TeacherManagerViewModel
+            TeacherManagerViewModel = new TeacherManagerComponentViewModel();
         }
         #endregion
 
         #region Display Area
+        /// <summary>
+        /// CurrentItemIndex
+        /// </summary>
         public int CurrentItemIndex
         {
             get
@@ -79,17 +115,33 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         #endregion
 
         #region Subject Area
+        /// <summary>
+        /// SubjectSelectCommand
+        /// </summary>
         public RelayCommand SubjectSelectCommand { get; internal set; }
+
+        /// <summary>
+        /// SubjectSelect
+        /// </summary>
+        /// <param name="param"></param>
         private void SubjectSelect(object param)
         {
             CurrentItemIndex = 0;
         }
 
-    
+
         #endregion
 
         #region Class Area
+        /// <summary>
+        /// ClassSelectCommand
+        /// </summary>
         public RelayCommand ClassSelectCommand { get; internal set; }
+
+        /// <summary>
+        /// ClassSelect
+        /// </summary>
+        /// <param name="param"></param>
         private void ClassSelect(object param)
         {
             CurrentItemIndex = 1;
@@ -98,7 +150,15 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         #endregion
 
         #region Class Room Area
+        /// <summary>
+        /// ClassRoomSelectCommand
+        /// </summary>
         public RelayCommand ClassRoomSelectCommand { get; internal set; }
+
+        /// <summary>
+        /// ClassRoomSelect
+        /// </summary>
+        /// <param name="param"></param>
         private void ClassRoomSelect(object param)
         {
             CurrentItemIndex = 2;
@@ -107,7 +167,15 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
 
 
         #region Teacher Area
+        /// <summary>
+        /// TeacherSelectCommand
+        /// </summary>
         public RelayCommand TeacherSelectCommand { get; internal set; }
+
+        /// <summary>
+        /// TeacherSelect
+        /// </summary>
+        /// <param name="param"></param>
         private void TeacherSelect(object param)
         {
             CurrentItemIndex = 3;
@@ -115,7 +183,11 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         #endregion
 
         #region Next 
+        /// <summary>
+        /// NextDialogCommand
+        /// </summary>
         public RelayCommand NextDialogCommand { get; internal set; }
+
         /// <summary>
         /// Next Dialog Command execution
         /// </summary>
@@ -158,7 +230,11 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         }
 
         #endregion
+        #region Usercontrol ViewModels
 
+        /// <summary>
+        /// SubjectsManagerViewModel
+        /// </summary>
         public SubjectsManagerComponentViewModel SubjectsManagerViewModel
         {
             get
@@ -175,5 +251,65 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
             }
 
         }
+
+        /// <summary>
+        /// ClassManagerViewModel
+        /// </summary>
+        public ClassManagerComponentViewModel ClassManagerViewModel
+        {
+            get
+            {
+                return m_ClassManagerViewModel;
+
+            }
+            set
+            {
+                if(m_ClassManagerViewModel != value)
+                {
+                    m_ClassManagerViewModel = value;
+                    RaisePropertyChanged("ClassManagerViewModel");
+                }
+            }
+        }
+
+        /// <summary>
+        /// ClassRoomManagerViewModel
+        /// </summary>
+        public ClassroomManagerComponentViewModel ClassRoomManagerViewModel
+        {
+            get
+            {
+                return m_ClassRoomManagerViewModel;
+            }
+            set
+            {
+                if(m_ClassRoomManagerViewModel != value)
+                {
+                    m_ClassRoomManagerViewModel = value;
+                    RaisePropertyChanged("ClassRoomManagerViewModel");
+                }
+            }
+        }
+
+        /// <summary>
+        /// TeacherManagerViewModel
+        /// </summary>
+        public TeacherManagerComponentViewModel TeacherManagerViewModel
+        {
+            get
+            {
+                return m_TeacherManagerViewModel;
+            }
+            set
+            {
+                if(m_TeacherManagerViewModel != value)
+                {
+                    m_TeacherManagerViewModel = value;
+                    RaisePropertyChanged("TeacherManagerViewModel");
+                }
+            }
+        }
+
+        #endregion
     }
 }

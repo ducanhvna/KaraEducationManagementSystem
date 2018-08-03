@@ -76,7 +76,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="290"/>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="290"/>
+                <ColumnDefinition Width="190"/>
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal">
                 <Button Width="80" Margin="5,10">
@@ -85,7 +85,7 @@
                         <TextBlock Margin="3,0,0,0">help</TextBlock>
                     </StackPanel>
                 </Button>
-                <Button Width="80" Margin="5,10">
+                <Button Width="80" Margin="5,10" Command="{Binding CreateNewCommand}">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Resources/icon/add_64.png" />
                         <TextBlock Margin="3,0,0,0">Save</TextBlock>
@@ -99,14 +99,14 @@
                 </Button>
             </StackPanel>
             <StackPanel Grid.Column="2" Orientation="Horizontal">
-                <Button Width="80" Margin="5,10">Previous</Button>
+               
                 <Button Width="80" Margin="5,10" Command="{Binding NextDialogCommand}">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Resources/icon/add_64.png" />
                         <TextBlock Margin="3,0,0,0">Next</TextBlock>
                     </StackPanel>
                 </Button>
-                <Button Width="80" Margin="5,10">Close</Button>
+                <Button Width="80" Margin="5,10" Command="{Binding CloseWithoutSaveCommand}">Close</Button>
             </StackPanel>
         </Grid>
     </Grid>

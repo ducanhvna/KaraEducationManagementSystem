@@ -43,6 +43,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="EduClass.cs" />
     <Compile Include="EduClassRoom.cs" />
+    <Compile Include="EduLesson.cs" />
     <Compile Include="EduSubject.cs" />
     <Compile Include="EduTeacher.cs" />
     <Compile Include="EduTimeTable.cs" />

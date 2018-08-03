@@ -4,8 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KaraEducationManagermentSystem.View.Component"
+             xmlns:vm="clr-namespace:KaraEducationManagermentSystem.ViewModel.Component"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             
+            >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -14,13 +17,13 @@
         <!--List Items Areas-->
         <StackPanel Margin="10">
             <TextBlock>Enter Classes</TextBlock>
-            <DataGrid></DataGrid>
+            <DataGrid ItemsSource="{Binding SchoolObject.ListClass}"></DataGrid>
         </StackPanel>
 
         <!--Buttons Area-->
         <StackPanel Grid.Column="1" Margin="35,30">
             <!--New button-->
-            <Button Height="25" HorizontalContentAlignment="Left" Margin="0,3">
+            <Button Height="25" HorizontalContentAlignment="Left" Margin="0,3" Command="{Binding NewClassCommand}">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,0">
                     <Image Source="/Resources/icon/add_64.png" />
                     <TextBlock Margin="10,0">New</TextBlock>
