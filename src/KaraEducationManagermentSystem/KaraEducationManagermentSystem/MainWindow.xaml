@@ -17,9 +17,7 @@
     <Grid x:Name="mainGrid">
         <TabControl>
             <TabItem Header="School" >
-                <v:SchoolTabItemContent viewShare:ShareObject.RootObject="{Binding ElementName=mainWindow, Path=DataContext}"
-                                      >
-                    
+                <v:SchoolTabItemContent viewShare:ShareObject.RootObject="{Binding ElementName=mainWindow, Path=DataContext}">
                 </v:SchoolTabItemContent>
             </TabItem>
             <TabItem Header="Subjects">

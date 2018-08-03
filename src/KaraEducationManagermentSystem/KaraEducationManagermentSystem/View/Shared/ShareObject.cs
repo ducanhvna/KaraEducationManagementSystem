@@ -1,4 +1,6 @@
-﻿using KaraEducationManagermentSystem.ViewModel;
+﻿using KaraEducationManagermentSystem.View.Component.subjecttab;
+using KaraEducationManagermentSystem.ViewModel;
+using KaraEducationManagermentSystem.ViewModel.Component.subjecttab;
 using KaraMongoModelNS;
 using System;
 using System.Collections.Generic;
@@ -12,6 +14,37 @@ namespace KaraEducationManagermentSystem.View.Shared
 {
     public static class ShareObject
     {
+        #region EduSubject to SubjectDetailView
+        internal static readonly DependencyProperty SubjectObjectProperty =
+        DependencyProperty.RegisterAttached(
+        "SubjectObject",
+        typeof(EduSubject),
+        typeof(ShareObject),
+        new PropertyMetadata(SubjectObjectChanged));
+
+        private static void SubjectObjectChanged(
+        DependencyObject d,
+        DependencyPropertyChangedEventArgs e)
+        {
+            var uc = d as SubjectDetailView;
+            var vm = uc.DataContext as SubjectDetailViewModel;
+            if (vm != null)
+            {
+                vm.Model = e.NewValue as EduSubject;
+            }
+        }
+
+        /// <summary>
+        /// SetSubjectObject
+        /// </summary>
+        /// <param name="target"></param>
+        /// <param name="value"></param>
+        internal static void SetSubjectObject(SubjectDetailView target, SubjectDetailViewModel value)
+        {
+            target.SetValue(SubjectObjectProperty, value);
+        }
+        #endregion
+
         #region School to User control
 
         public static readonly DependencyProperty SchoolObjectProperty =

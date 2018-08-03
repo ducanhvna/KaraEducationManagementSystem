@@ -5,6 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KaraEducationManagermentSystem.View"
              xmlns:vm="clr-namespace:KaraEducationManagermentSystem.ViewModel"
+             xmlns:item="clr-namespace:KaraEducationManagermentSystem.View.Component.subjecttab"
+             xmlns:share="clr-namespace:KaraEducationManagermentSystem.View.Shared"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              DataContext="{DynamicResource mainViewModel}">
@@ -50,7 +52,21 @@
         </DockPanel>
         <!--Grid panel-->
         <Grid Grid.Row="1">
-            <DataGrid></DataGrid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="8*"/>
+            </Grid.ColumnDefinitions>
+            <!--List Items-->
+            <ListView Grid.Column="0" ItemsSource="{Binding SchoolObject.ListSubject}" x:Name="mainList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Title}"></TextBlock>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <item:SubjectDetailView Grid.Column="1" share:ShareObject.SubjectObject="{Binding ElementName=mainList, Path=SelectedItem}">
+                
+            </item:SubjectDetailView>
         </Grid>
     </Grid>
 </UserControl>
