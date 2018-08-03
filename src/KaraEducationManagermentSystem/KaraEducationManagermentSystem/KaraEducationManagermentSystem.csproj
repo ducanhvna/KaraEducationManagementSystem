@@ -59,6 +59,7 @@
     </ApplicationDefinition>
     <Compile Include="ViewModel\Component\ClassManagerComponentViewModel.cs" />
     <Compile Include="ViewModel\Component\ClassroomManagerComponentViewModel.cs" />
+    <Compile Include="ViewModel\Component\schooltab\SchoolOverviewViewModel.cs" />
     <Compile Include="ViewModel\Dialog\CreatenewLessonDialogViewModel.cs" />
     <Compile Include="ViewModel\Component\SubjectsManagerComponentViewModel.cs" />
     <Compile Include="ViewModel\Component\TeacherManagerComponentViewModel.cs" />
@@ -89,6 +90,9 @@
     </Compile>
     <Compile Include="View\Component\ClassroomManagerComponent.xaml.cs">
       <DependentUpon>ClassroomManagerComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Component\schooltab\Overview.xaml.cs">
+      <DependentUpon>Overview.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Component\SubjectsManagerComponent.xaml.cs">
       <DependentUpon>SubjectsManagerComponent.xaml</DependentUpon>
@@ -167,6 +171,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Component\ClassroomManagerComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Component\schooltab\Overview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -324,5 +332,6 @@
     <Resource Include="Resources\icon\teacher_64.png" />
     <Resource Include="Resources\icon\teacher_arrow_64.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

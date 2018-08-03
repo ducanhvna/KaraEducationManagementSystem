@@ -5,9 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KaraEducationManagermentSystem.View"
              xmlns:vm="clr-namespace:KaraEducationManagermentSystem.ViewModel"
+             xmlns:coponent="clr-namespace:KaraEducationManagermentSystem.View.Component.schooltab"
+             xmlns:share="clr-namespace:KaraEducationManagermentSystem.View.Shared"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" 
-             DataContext="{DynamicResource vmMain}">
+             DataContext="{DynamicResource vmMain}"
+             x:Name="mainWindow">
     <UserControl.Resources>
         <vm:ViewModelSchoolTabItem x:Key="vmMain"/>
     </UserControl.Resources>
@@ -22,7 +25,7 @@
                 <ToolBar Background="White">
                     <Button Command="{Binding CreateNewSchoolCommand}" ToolTip="Paste from Windows Clipboard.">
                         <StackPanel Orientation="Vertical">
-                            <Image Source="/Resources/icon/school_64.png" Width="48"/>
+                            <Image Source="/Resources/icon/gener_64.png" Width="48"/>
                             <TextBlock Margin="3,0,0,0">New School</TextBlock>
                         </StackPanel>
                     </Button>
@@ -32,27 +35,37 @@
                             <TextBlock Margin="3,0,0,0">Open School</TextBlock>
                         </StackPanel>
                     </Button>
-                    <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
-                        <StackPanel Orientation="Vertical">
-                            <Image Source="/Resources/icon/gener_64.png"  Width="48"/>
-                            <TextBlock Margin="3,0,0,0">Time table</TextBlock>
-                        </StackPanel>
-                    </Button>
+                    
                 </ToolBar>
             </ToolBarTray>
             
         </DockPanel>
 
         <!--Content Area-->
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Margin="20,10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="8*"/>
             </Grid.ColumnDefinitions>
-            <TreeView>
-                
-            </TreeView>
-            <DataGrid Grid.Column="1" SelectedItem="{Binding SchoolObject}" ItemsSource="{Binding ListSchool}"></DataGrid>
+            <ListView>
+                <ListView.Items>
+                    <ListViewItem>
+                        <TextBlock>Overview</TextBlock>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <TextBlock>Time Table</TextBlock>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <TextBlock>Meeting</TextBlock>
+                    </ListViewItem>
+                </ListView.Items>
+            </ListView>
+            <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1">
+               
+                <coponent:Overview share:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}">
+                    
+                </coponent:Overview>
+            </Border>
         </Grid>
     </Grid>
 </UserControl>

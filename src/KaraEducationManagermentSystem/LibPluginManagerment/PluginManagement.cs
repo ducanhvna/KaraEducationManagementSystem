@@ -56,7 +56,7 @@ namespace PluginManagermentNS
         /// </summary>
         /// <param name="contanerName"></param>
         /// <returns></returns>
-        public static IObjectContainers CreatePlugin(string contanerName)
+        public static IObjectContainer CreatePlugin(string contanerName)
         {
             var plugin = Plugins[contanerName];
             if(plugin != null)

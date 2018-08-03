@@ -11,7 +11,7 @@ namespace CommonNS.CommonStructure
     /// <summary>
     /// Object containers
     /// </summary>
-    public interface IObjectContainers
+    public interface IObjectContainer
     {
         /// <summary>
         /// Container key
@@ -24,9 +24,13 @@ namespace CommonNS.CommonStructure
         string Name { get; set; }
 
         /// <summary>
+        /// Data
+        /// </summary>
+        object Data { get; set; }
+        /// <summary>
         /// sub items
         /// </summary>
-        ObservableCollection<IObjectContainers> SubItems { get; }
+        ObservableCollection<IObjectContainer> SubItems { get; }
 
         /// <summary>
         /// Entity Relationship Diagrm view

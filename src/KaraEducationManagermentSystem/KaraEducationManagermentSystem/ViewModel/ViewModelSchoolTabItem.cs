@@ -28,7 +28,7 @@ namespace KaraEducationManagermentSystem.ViewModel
                     m_Parent = value;
                     if (m_Parent.EduModel != null)
                     {
-                        ListSchool = m_Parent.EduModel.SchoolCollection;
+                        //
 
                     }
                 }
@@ -45,24 +45,12 @@ namespace KaraEducationManagermentSystem.ViewModel
         }
 
         #region Initalize Display Area
-      public ObservableCollection<School> ListSchool { get
-            {
-                return m_ListSchool;
-            }
-            set
-            {
-                if(m_ListSchool != value)
-                {
-                    m_ListSchool = value;
-                    RaisePropertyChanged("ListSchool");
-                }
-            }
-        }
+ 
         #endregion
         #region Create new school
 
        SchoolCreateNewViewModel CreateNewSchoolViewModel;
-        private ObservableCollection<School> m_ListSchool;
+    
     
        
 
@@ -90,7 +78,7 @@ namespace KaraEducationManagermentSystem.ViewModel
                     Parent.EduModel = value;
                     if (Parent.EduModel != null)
                     {
-                        ListSchool = Parent.EduModel.SchoolCollection;
+                        
 
                     }
                 }
@@ -132,7 +120,7 @@ namespace KaraEducationManagermentSystem.ViewModel
                     //await EduModel.AsyncInsertOne(NewSchoolObject);
 
                     await EduModel.AsyncInsertOne(CreateNewSchoolViewModel.SchoolObject);
-                    ListSchool = EduModel.SchoolCollection;
+                    SchoolObject = CreateNewSchoolViewModel.SchoolObject;
                 }
             }
             // Release object
@@ -157,6 +145,7 @@ namespace KaraEducationManagermentSystem.ViewModel
                 {
                     Parent.SchoolObject = value;
                     RaisePropertyChanged("SchoolObject");
+
                 }
             }
            
@@ -177,8 +166,21 @@ namespace KaraEducationManagermentSystem.ViewModel
 
                 if (dgViewModel.CloseWindowFlag== true)
                 {
-                    // Add code here
+                    if(dgViewModel.SchoolObject != null)
+                    {
+                        SchoolObject = dgViewModel.SchoolObject;
+                    }
                 }
+            }
+        }
+        #endregion
+
+        #region OverView area
+        public string SchoolName
+        {
+            get
+            {
+                return SchoolObject?.Name;
             }
         }
         #endregion

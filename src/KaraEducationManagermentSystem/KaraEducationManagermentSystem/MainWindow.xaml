@@ -9,7 +9,7 @@
         xmlns:viewShare="clr-namespace:KaraEducationManagermentSystem.View.Shared"
         mc:Ignorable="d"
         DataContext="{DynamicResource mainViewModel}"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="650" Width="1000"
         Name="mainWindow">
     <Window.Resources>
         <vm:ViewModelMainWindow x:Key="mainViewModel"/>

@@ -23,7 +23,7 @@ namespace PluginManagermentNS
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        IObjectContainers CreateContainer(int key,string name);
+        IObjectContainer CreateContainer(int key,string name);
 
 
 

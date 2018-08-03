@@ -37,7 +37,7 @@
         </Grid>
         <!--List School-->
         <DataGrid Grid.Row="1" ItemsSource="{Binding ListSchool}"
-                  SelectedItem="{Binding SelectedSchool}"></DataGrid>
+                  SelectedItem="{Binding SchoolObject}"></DataGrid>
         
         <!--Button Area-->
         <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">

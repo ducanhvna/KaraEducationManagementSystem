@@ -16,10 +16,7 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         /// Current selected items
         /// </summary>
         private int m_currentItemIndex;
-        private TeacherManagerComponentViewModel m_TeacherManagerViewModel;
-        private ClassroomManagerComponentViewModel m_ClassRoomManagerViewModel;
-        private ClassManagerComponentViewModel m_ClassManagerViewModel;
-        private SubjectsManagerComponentViewModel m_SubjectsManagerViewModel;
+       
 
         public School FocusSchoolObject { get; internal set; }
 
@@ -40,17 +37,8 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
             // Initialize Teacher select command
             TeacherSelectCommand = new RelayCommand(TeacherSelect);
 
-            // View model for subobject
-            SubjectsManagerViewModel = new SubjectsManagerComponentViewModel();
-
-            // ClassManagerViewModel
-            ClassManagerViewModel = new ClassManagerComponentViewModel();
-
-            // ClassRoomManagerViewModel
-            ClassRoomManagerViewModel = new ClassroomManagerComponentViewModel();
-
-            // TeacherManagerViewModel
-            TeacherManagerViewModel = new TeacherManagerComponentViewModel();
+            // Initialize Close Dialog command
+            CloseDialogCommand = new RelayCommand(CloseDialog);
         }
 
 
@@ -152,87 +140,7 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
 
         #endregion
 
-        #region Usercontrol ViewModels
-
-        /// <summary>
-        /// SubjectsManagerViewModel
-        /// </summary>
-        public SubjectsManagerComponentViewModel SubjectsManagerViewModel
-        {
-            get
-            {
-                return m_SubjectsManagerViewModel;
-            }
-            set
-            {
-                if (m_SubjectsManagerViewModel != value)
-                {
-                    m_SubjectsManagerViewModel = value;
-                    RaisePropertyChanged("SubjectsManagerViewModel");
-                }
-            }
-
-        }
-
-        /// <summary>
-        /// ClassManagerViewModel
-        /// </summary>
-        public ClassManagerComponentViewModel ClassManagerViewModel
-        {
-            get
-            {
-                return m_ClassManagerViewModel;
-
-            }
-            set
-            {
-                if (m_ClassManagerViewModel != value)
-                {
-                    m_ClassManagerViewModel = value;
-                    RaisePropertyChanged("ClassManagerViewModel");
-                }
-            }
-        }
-
-        /// <summary>
-        /// ClassRoomManagerViewModel
-        /// </summary>
-        public ClassroomManagerComponentViewModel ClassRoomManagerViewModel
-        {
-            get
-            {
-                return m_ClassRoomManagerViewModel;
-            }
-            set
-            {
-                if (m_ClassRoomManagerViewModel != value)
-                {
-                    m_ClassRoomManagerViewModel = value;
-                    RaisePropertyChanged("ClassRoomManagerViewModel");
-                }
-            }
-        }
-
-        /// <summary>
-        /// TeacherManagerViewModel
-        /// </summary>
-        public TeacherManagerComponentViewModel TeacherManagerViewModel
-        {
-            get
-            {
-                return m_TeacherManagerViewModel;
-            }
-            set
-            {
-                if (m_TeacherManagerViewModel != value)
-                {
-                    m_TeacherManagerViewModel = value;
-                    RaisePropertyChanged("TeacherManagerViewModel");
-                }
-            }
-        }
-
-        #endregion
+       
 
         #region Common Infomation
         private School m_SchoolObject;
@@ -250,10 +158,7 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
                     m_SchoolObject = value;
 
                     // Set School object for object component
-                    SubjectsManagerViewModel.SchoolObject = m_SchoolObject;
-                    ClassManagerViewModel.SchoolObject = m_SchoolObject;
-                    ClassRoomManagerViewModel.SchoolObject = m_SchoolObject;
-                    TeacherManagerViewModel.SchoolObject = m_SchoolObject;
+             
 
                     RaisePropertyChanged("SchoolObject");
                 }
@@ -275,7 +180,7 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
                 }
             }
         }
-
         #endregion
+
     }
 }

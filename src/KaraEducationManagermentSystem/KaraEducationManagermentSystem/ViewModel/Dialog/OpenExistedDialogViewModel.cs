@@ -74,7 +74,7 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         /// <summary>
         /// Selected School
         /// </summary>
-        public School SelectedSchool
+        public School SchoolObject
         {
             get
             {
@@ -96,6 +96,10 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         #region Open Command
         public RelayCommand OpenSchoolCommand { get; internal set; }
 
+        /// <summary>
+        /// Open school command execution
+        /// </summary>
+        /// <param name="param"></param>
         private void OpenSchool (object param)
         {
             CloseWindowFlag = true;
@@ -104,7 +108,7 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
 
         #region Ignore command
         public RelayCommand IgnoreActionCommand { get; internal set; }
-        public School SchoolObject { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        
 
         /// <summary>
         /// IgnoreAction
@@ -112,7 +116,7 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         /// <param name="param"></param>
         private void IgnoreAction(object param)
         {
-            SelectedSchool = null;
+            SchoolObject = null;
             CloseWindowFlag = false;
         }
     
