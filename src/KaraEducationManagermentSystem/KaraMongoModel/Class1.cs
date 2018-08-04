@@ -9,6 +9,14 @@ using System.Threading.Tasks;
 
 namespace KaraMongoModelNS
 {
+    public enum ParentsRelation
+    {
+        Father, 
+        Mother, 
+        Brother,
+        Sister,
+        Other
+    }
     public class Symbol
     {
         public string Name { get; set; }

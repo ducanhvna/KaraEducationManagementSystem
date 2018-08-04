@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System.Collections.ObjectModel;
 
 namespace KaraMongoModelNS
 {
@@ -19,10 +20,13 @@ namespace KaraMongoModelNS
         /// </summary>
         public short teacherId { get; set; }
 
+        public ObservableCollection<EduStudent> Students { get; set; }
+
         [BsonIgnore]
         public EduTeacher Teacher { get; set; }
 
         [BsonIgnore]
         public School Parent { get; set; }
+
     }
 }

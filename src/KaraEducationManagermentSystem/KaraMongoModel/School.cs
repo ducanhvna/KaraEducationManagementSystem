@@ -30,6 +30,9 @@ namespace KaraMongoModelNS
 
         public ObservableCollection<EduTeacher> Teachers { get; set; }
 
+
+        public ObservableCollection<EduStudent> UnassignStudent { get; set; }
+
         public EduTimeTable TimeTable { get; set; }
     }
 }

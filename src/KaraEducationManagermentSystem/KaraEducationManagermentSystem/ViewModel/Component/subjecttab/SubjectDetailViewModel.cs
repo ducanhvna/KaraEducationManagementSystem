@@ -36,7 +36,14 @@ namespace KaraEducationManagermentSystem.ViewModel.Component.subjecttab
             }
         }
 
+        /// <summary>
+        /// Subject Data
+        /// </summary>
         private  EduSubject m_SubjectData;
+
+        /// <summary>
+        /// Model
+        /// </summary>
         public EduSubject Model
         {
             get

@@ -42,7 +42,8 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Last name:" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"></TextBlock>
-                <TextBox Grid.Column="1" Width="200" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center">
+                <TextBox Grid.Column="1" Width="200" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"
+                         >
 
                 </TextBox>
 

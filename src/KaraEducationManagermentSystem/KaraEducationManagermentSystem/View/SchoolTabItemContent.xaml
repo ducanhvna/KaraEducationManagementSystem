@@ -47,7 +47,7 @@
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="8*"/>
             </Grid.ColumnDefinitions>
-            <ListView>
+            <ListView x:Name="mainListView">
                 <ListView.Items>
                     <ListViewItem>
                         <TextBlock>Overview</TextBlock>
@@ -58,13 +58,46 @@
                     <ListViewItem>
                         <TextBlock>Meeting</TextBlock>
                     </ListViewItem>
+                    <ListViewItem>
+                        <TextBlock>Students</TextBlock>
+                    </ListViewItem>
+                    
                 </ListView.Items>
             </ListView>
             <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1">
-               
-                <coponent:Overview share:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}">
-                    
-                </coponent:Overview>
+                <Grid>
+                    <Grid>
+                        <Grid.Style>
+                            <Style TargetType="Grid">
+                                <Setter Property="Visibility" Value="Hidden"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=mainListView, Path=SelectedIndex}" Value="0">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Grid.Style>
+                        <coponent:Overview share:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}">
+
+                        </coponent:Overview>
+                    </Grid>
+                    <!--Student Tab-->
+                    <Grid>
+                        <Grid.Style>
+                            <Style TargetType="Grid">
+                                <Setter Property="Visibility" Value="Hidden"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=mainListView, Path=SelectedIndex}" Value="3">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Grid.Style>
+                        <coponent:StudentListDataView share:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}">
+
+                        </coponent:StudentListDataView>
+                    </Grid>
+                </Grid>
             </Border>
         </Grid>
     </Grid>

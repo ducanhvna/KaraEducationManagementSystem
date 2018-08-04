@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="KaraEducationManagermentSystem.View.Component.schooltab.StudentListDataView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KaraEducationManagermentSystem.View.Component.schooltab"
+             xmlns:vm="clr-namespace:KaraEducationManagermentSystem.ViewModel.Component.subjecttab"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="{DynamicResource vmMainViewModel}">
+    <UserControl.Resources>
+        <vm:StudentListDataViewModel x:Key="vmMainViewModel"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <!--Triger Combobox-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="8*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Group:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20,0"/>
+            <ComboBox Grid.Column="1" Width="180" Height="30" HorizontalAlignment="Left" ItemsSource="{Binding ListCondition}"></ComboBox>
+        </Grid>
+        <!--Content Area-->
+        <Grid Grid.Row="1">
+            <DataGrid ItemsSource="{Binding ListStudent}"></DataGrid>
+        </Grid>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Height="25" HorizontalContentAlignment="Left" Margin="0,3" Command="{Binding AddNewStudentCommand}">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,0">
+                    <Image Source="/Resources/icon/add_64.png" />
+                    <TextBlock Margin="10,0">New</TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

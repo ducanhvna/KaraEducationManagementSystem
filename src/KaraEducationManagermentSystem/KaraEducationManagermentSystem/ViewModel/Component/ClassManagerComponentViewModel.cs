@@ -81,7 +81,9 @@ namespace KaraEducationManagermentSystem.ViewModel.Component
                 {
                     if (dgViewModel.NewClass != null)
                     {
+                        dgViewModel.NewClass._id = new MongoDB.Bson.ObjectId();
                         SchoolObject.ListClass.Add(dgViewModel.NewClass);
+                        
                     }
 
                 }
