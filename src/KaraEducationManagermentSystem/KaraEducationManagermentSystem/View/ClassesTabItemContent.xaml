@@ -41,8 +41,8 @@
                 <ToolBar Background="White">
                     <Button Command="Paste" ToolTip="Paste from Windows Clipboard." Background="White">
                         <StackPanel Orientation="Vertical">
-                            <Image Source="/Resources/icon/lessons_32.png"  Width="48"/>
-                            <TextBlock Margin="3,0,0,0">lesson</TextBlock>
+                            <Image Source="/Resources/icon/addStudent.png"  Width="48"/>
+                            <TextBlock Margin="3,0,0,0">Add Student</TextBlock>
                         </StackPanel>
                     </Button>
                 </ToolBar>
@@ -55,10 +55,10 @@
                 <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
             <!--List of Class-->
-            <TreeView></TreeView>
+            <TreeView ItemsSource="{Binding SchoolObject.ListClass}" x:Name="treeviewListClass"></TreeView>
             
             <!--List of pupile in class-->
-            <DataGrid Grid.Column="1"></DataGrid>
+            <DataGrid Grid.Column="1" ItemsSource="{Binding ElementName=treeviewListClass, Path=SelectedItem.Students}"></DataGrid>
         </Grid>
     </Grid>
 </UserControl>

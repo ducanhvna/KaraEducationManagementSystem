@@ -356,6 +356,14 @@
     <Resource Include="Resources\icon\teacher_64.png" />
     <Resource Include="Resources\icon\teacher_arrow_64.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\icon\addStudent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon\addMeeting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon\extraClass.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

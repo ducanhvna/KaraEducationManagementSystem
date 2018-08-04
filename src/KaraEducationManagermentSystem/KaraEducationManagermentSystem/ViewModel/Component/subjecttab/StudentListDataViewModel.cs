@@ -54,9 +54,12 @@ namespace KaraEducationManagermentSystem.ViewModel.Component.subjecttab
                             }
                             foreach (var item in SchoolObject.ListClass)
                             {
-                                foreach (var student in item.Students)
+                                if (item.Students != null)
                                 {
-                                    result.Add(student);
+                                    foreach (var student in item.Students)
+                                    {
+                                        result.Add(student);
+                                    }
                                 }
                             }
                             break;
