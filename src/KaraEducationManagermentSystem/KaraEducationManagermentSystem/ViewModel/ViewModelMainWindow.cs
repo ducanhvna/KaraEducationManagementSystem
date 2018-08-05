@@ -13,6 +13,7 @@ namespace KaraEducationManagermentSystem.ViewModel
     /// </summary>
     class ViewModelMainWindow : ViewModelBase, IManageSchoolBase
     {
+        
         /// <summary>
         /// model
         /// </summary>

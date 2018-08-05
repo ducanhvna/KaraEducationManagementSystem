@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="close">Fermer</system:String>
+    <system:String x:Key="login">connexion</system:String>
+    <system:String x:Key="language">Langue</system:String>
+    <system:String x:Key="School">Trường</system:String>
+    <system:String x:Key="Subject">Bộ môn</system:String>
+    <system:String x:Key="Class">Lớp</system:String>
+    <system:String x:Key="ClassRoom">Phòng học</system:String>
+    <system:String x:Key="Teacher">Giáo viên</system:String>
+    <system:String x:Key="NewSchool">Tạo mới dữ liệu</system:String>
+    <system:String x:Key="OpenSchool">Load dữ liệu</system:String>
+    <system:String x:Key="AddSubject">Quản lý danh sách</system:String>
+    <system:String x:Key="AddSubjectMeeting">Lịch họp bộ môn</system:String>
+    <system:String x:Key="CreateExtraClass">Lớp học thêm</system:String>
+    <system:String x:Key="ManageClass">Quản lý lớp học</system:String>
+    <system:String x:Key="AdvanceClass">Lớp học nâng cao</system:String>
+    <system:String x:Key="AddStudent">Thêm học sinh</system:String>
+    <system:String x:Key="ManageClassRoom">Quản lý phòng học</system:String>
+    <system:String x:Key="ManageTest">Kiểm tra Học sinh</system:String>
+    <system:String x:Key="Overview">Tổng quan</system:String>
+    <system:String x:Key="TimeTable">Thời khóa biểu</system:String>
+    <system:String x:Key="CreateEvent">Sự kiện trường</system:String>
+    <system:String x:Key="enrollStudent">Tuyển sinh</system:String>
+    <system:String x:Key="Student">Học sinh</system:String>
+    <!-- All StringResources Goes Here -->
+</ResourceDictionary>

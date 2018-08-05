@@ -170,6 +170,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Resources\StringResources.Vi.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\StringResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\ClassesTabItemContent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -364,6 +372,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\icon\extraClass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon\event_256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon\enrollStudent_320.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

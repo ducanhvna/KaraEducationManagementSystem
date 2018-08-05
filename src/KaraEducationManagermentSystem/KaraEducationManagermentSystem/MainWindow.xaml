@@ -12,36 +12,61 @@
         Title="MainWindow" Height="650" Width="1000"
         Name="mainWindow">
     <Window.Resources>
-        <vm:ViewModelMainWindow x:Key="mainViewModel"/>
+  
+        <ResourceDictionary>
+            <vm:ViewModelMainWindow x:Key="mainViewModel"/>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/StringResources.Vi.xaml">
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Window.Resources>
     <Grid x:Name="mainGrid">
         <TabControl>
-            <TabItem Header="School" >
-                <v:SchoolTabItemContent viewShare:ShareObject.RootObject="{Binding ElementName=mainWindow, Path=DataContext}">
+            <TabItem Header="{DynamicResource School}" >
+                <v:SchoolTabItemContent x:Name="schoolTab" viewShare:ShareObject.RootObject="{Binding ElementName=mainWindow, Path=DataContext}">
                 </v:SchoolTabItemContent>
             </TabItem>
-            <TabItem Header="Subjects">
-                <v:SubjectsTabItemContent viewShare:ShareObject.ModelObject="{Binding ElementName=mainWindow, Path=DataContext.EduModel}"
+            <TabItem Header="{DynamicResource Subject}">
+                <v:SubjectsTabItemContent x:Name="subjectTab" 
+                    viewShare:ShareObject.ModelObject="{Binding ElementName=mainWindow, Path=DataContext.EduModel}"
                                         viewShare:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}">
                 </v:SubjectsTabItemContent>
             </TabItem>
-            <TabItem Header="Classes">
-                <v:ClassesTabItemContent viewShare:ShareObject.ModelObject="{Binding ElementName=mainWindow, Path=DataContext.EduModel}"
+            <TabItem Header="{DynamicResource Class}">
+                <v:ClassesTabItemContent 
+                    x:Name="classTab"
+                    viewShare:ShareObject.ModelObject="{Binding ElementName=mainWindow, Path=DataContext.EduModel}"
                                         viewShare:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}">
                 </v:ClassesTabItemContent>
             </TabItem>
-            <TabItem Header="Class Room">
+            <TabItem Header="{DynamicResource ClassRoom}">
                 <v:ClassRoomTabItemContent viewShare:ShareObject.ModelObject="{Binding ElementName=mainWindow, Path=DataContext.EduModel}"
                                         viewShare:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}">
                 </v:ClassRoomTabItemContent>
             </TabItem>
-            <TabItem Header="Teachers">
+            <TabItem Header="{DynamicResource Teacher}">
                 <v:TeacherTabItemContent viewShare:ShareObject.ModelObject="{Binding ElementName=mainWindow, Path=DataContext.EduModel}"
                                         viewShare:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}">
                 </v:TeacherTabItemContent>
             </TabItem>
-            <TabItem Header="Time table">
+            <TabItem Header="{DynamicResource TimeTable}">
                 
+            </TabItem>
+            <TabItem Header="System">
+                <DockPanel>
+                    <ToolBarTray DockPanel.Dock="Top" Background="White" Margin="15">
+                        <ToolBar Background="White">
+                            <Button ToolTip="Manage teachers infomation" Background="White" Click="ChangeLanguage_Click">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Source="/Resources/icon/lessons_32.png"  Width="48"/>
+                                    <TextBlock Margin="3,0,0,0">lesson</TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </ToolBar>
+                    </ToolBarTray>
+                </DockPanel>
             </TabItem>
         </TabControl>
     </Grid>

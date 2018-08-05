@@ -9,7 +9,14 @@
              d:DesignHeight="450" d:DesignWidth="800"
              DataContext="{DynamicResource vmTab}">
     <UserControl.Resources>
-        <vm:ViewModelClassesTabItem x:Key="vmTab"/>
+        <ResourceDictionary>
+            <vm:ViewModelClassesTabItem x:Key="vmTab"/>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/StringResources.Vi.xaml">
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -22,19 +29,19 @@
                     <Button Command="{Binding ManageClassCollectionsCommand}" ToolTip="Paste from Windows Clipboard.">
                         <StackPanel Orientation="Vertical">
                             <Image Source="/Resources/icon/add_64.png" Width="48"/>
-                            <TextBlock Margin="3,0,0,0">Manager</TextBlock>
+                            <TextBlock Margin="3,0,0,0" Text="{DynamicResource ManageClass}"></TextBlock>
                         </StackPanel>
                     </Button>
                     <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
                         <StackPanel Orientation="Vertical">
                             <Image Source="/Resources/icon/edit_64.png"  Width="48"/>
-                            <TextBlock Margin="3,0,0,0">Test Score</TextBlock>
+                            <TextBlock Margin="3,0,0,0" Text="{DynamicResource ManageTest}"></TextBlock>
                         </StackPanel>
                     </Button>
                     <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
                         <StackPanel Orientation="Vertical">
-                            <Image Source="/Resources/icon/del_64.png"  Width="48"/>
-                            <TextBlock Margin="3,0,0,0">Remove class</TextBlock>
+                            <Image Source="/Resources/icon/extraClass.png"  Width="48"/>
+                            <TextBlock Margin="3,0,0,0" Text="{DynamicResource CreateExtraClass}"></TextBlock>
                         </StackPanel>
                     </Button>
                 </ToolBar>
@@ -42,7 +49,7 @@
                     <Button Command="Paste" ToolTip="Paste from Windows Clipboard." Background="White">
                         <StackPanel Orientation="Vertical">
                             <Image Source="/Resources/icon/addStudent.png"  Width="48"/>
-                            <TextBlock Margin="3,0,0,0">Add Student</TextBlock>
+                            <TextBlock Margin="3,0,0,0" Text="{DynamicResource AddStudent}"></TextBlock>
                         </StackPanel>
                     </Button>
                 </ToolBar>

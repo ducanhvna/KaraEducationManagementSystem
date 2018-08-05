@@ -12,7 +12,13 @@
              DataContext="{DynamicResource vmMain}"
              x:Name="mainWindow">
     <UserControl.Resources>
-        <vm:ViewModelSchoolTabItem x:Key="vmMain"/>
+        <ResourceDictionary>
+            <vm:ViewModelSchoolTabItem x:Key="vmMain"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/StringResources.Vi.xaml">
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -26,16 +32,27 @@
                     <Button Command="{Binding CreateNewSchoolCommand}" ToolTip="Paste from Windows Clipboard.">
                         <StackPanel Orientation="Vertical">
                             <Image Source="/Resources/icon/gener_64.png" Width="48"/>
-                            <TextBlock Margin="3,0,0,0">New School</TextBlock>
+                            <TextBlock Margin="3,0,0,0" Text="{DynamicResource NewSchool}"></TextBlock>
                         </StackPanel>
                     </Button>
                     <Button Command="{Binding OpenSchoolCommand}" ToolTip="Open a exited School.">
                         <StackPanel Orientation="Vertical">
                             <Image Source="/Resources/icon/school_64.png" Width="48"/>
-                            <TextBlock Margin="3,0,0,0">Open School</TextBlock>
+                            <TextBlock Margin="3,0,0,0" Text="{DynamicResource OpenSchool}"></TextBlock>
                         </StackPanel>
                     </Button>
-                    
+                    <Button  ToolTip="Open a exited School.">
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="/Resources/icon/event_256.png" Width="48"/>
+                            <TextBlock Margin="3,0,0,0" Text="{DynamicResource CreateEvent}"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button  ToolTip="Open a exited School.">
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="/Resources/icon/enrollStudent_320.png" Width="48"/>
+                            <TextBlock Margin="3,0,0,0" Text="{DynamicResource enrollStudent}"></TextBlock>
+                        </StackPanel>
+                    </Button>
                 </ToolBar>
             </ToolBarTray>
             
@@ -50,16 +67,16 @@
             <ListView x:Name="mainListView">
                 <ListView.Items>
                     <ListViewItem>
-                        <TextBlock>Overview</TextBlock>
+                        <TextBlock Text="{DynamicResource Overview}"></TextBlock>
                     </ListViewItem>
                     <ListViewItem>
-                        <TextBlock>Time Table</TextBlock>
+                        <TextBlock Text="{DynamicResource TimeTable}"></TextBlock>
                     </ListViewItem>
                     <ListViewItem>
                         <TextBlock>Meeting</TextBlock>
                     </ListViewItem>
                     <ListViewItem>
-                        <TextBlock>Students</TextBlock>
+                        <TextBlock Text="{DynamicResource Student}"></TextBlock>
                     </ListViewItem>
                     
                 </ListView.Items>

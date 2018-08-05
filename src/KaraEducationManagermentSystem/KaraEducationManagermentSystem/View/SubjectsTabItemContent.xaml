@@ -11,7 +11,13 @@
              d:DesignHeight="450" d:DesignWidth="800"
              DataContext="{DynamicResource mainViewModel}">
     <UserControl.Resources>
-        <vm:ViewModelSubjectsTabItem x:Key="mainViewModel"/>
+        <ResourceDictionary>
+            <vm:ViewModelSubjectsTabItem x:Key="mainViewModel"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/StringResources.Vi.xaml">
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -24,19 +30,19 @@
                     <Button Command="{Binding ManageSubjectCollectionsCommand}" ToolTip="Manager list Subject">
                         <StackPanel Orientation="Vertical">
                             <Image Source="/Resources/icon/add_64.png" Width="48"/>
-                            <TextBlock Margin="3,0,0,0">Add Subjects</TextBlock>
+                            <TextBlock Margin="3,0,0,0" Text="{DynamicResource AddSubject}"></TextBlock>
                         </StackPanel>
                     </Button>
                     <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
                         <StackPanel Orientation="Vertical">
                             <Image Source="/Resources/icon/addMeeting.png"  Width="48"/>
-                            <TextBlock Margin="3,0,0,0">Add subject Meeting</TextBlock>
+                            <TextBlock Margin="3,0,0,0" Text="{DynamicResource AddSubjectMeeting}"></TextBlock>
                         </StackPanel>
                     </Button>
                     <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
                         <StackPanel Orientation="Vertical">
                             <Image Source="/Resources/icon/extraClass.png"  Width="48"/>
-                            <TextBlock Margin="3,0,0,0">Create Extra Class</TextBlock>
+                            <TextBlock Margin="3,0,0,0" Text="{DynamicResource AdvanceClass}"></TextBlock>
                         </StackPanel>
                     </Button>
                 </ToolBar>

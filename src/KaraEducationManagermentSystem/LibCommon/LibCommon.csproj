@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonStructure\IObjectContainers.cs" />
+    <Compile Include="Global.cs" />
     <Compile Include="MvvM\Helpers\Converters.cs" />
     <Compile Include="MvvM\Helpers\DialogCloser.cs" />
     <Compile Include="MvvM\Helpers\IClosableViewModel.cs" />

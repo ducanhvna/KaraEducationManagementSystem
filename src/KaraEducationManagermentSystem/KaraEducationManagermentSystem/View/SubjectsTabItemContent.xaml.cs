@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonNS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,11 @@ namespace KaraEducationManagermentSystem.View
         public SubjectsTabItemContent()
         {
             InitializeComponent();
+        }
+
+        internal void SetLanguageForComponent()
+        {
+            Global.SetLanguageForComponent(this);
         }
     }
 }

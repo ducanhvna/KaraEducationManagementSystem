@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="close">Close</system:String>
+    <system:String x:Key="login">Login</system:String>
+    <system:String x:Key="language">Language</system:String>
+    <system:String x:Key="School">School</system:String>
+    <system:String x:Key="Subject">Subject</system:String>
+    <system:String x:Key="Class">Class</system:String>
+    <system:String x:Key="ClassRoom">Class Room</system:String>
+    <system:String x:Key="Teacher">Teacher</system:String>
+    <system:String x:Key="NewSchool">New School Data</system:String>
+    <system:String x:Key="OpenSchool">Open school</system:String>
+    <system:String x:Key="AddSubject">Manager Subject</system:String>
+    <system:String x:Key="AddSubjectMeeting">Subject Meeting</system:String>
+    <system:String x:Key="CreateExtraClass">Create Extra Class</system:String>
+    <system:String x:Key="ManageClass">Manage Class</system:String>
+    <system:String x:Key="AdvanceClass">Advance Class</system:String>
+    <system:String x:Key="AddStudent">Add Student</system:String>
+    <system:String x:Key="ManageClassRoom">Mange Class room</system:String>
+    <system:String x:Key="ManageTest">Manage Test</system:String>
+    <system:String x:Key="Overview">Overview</system:String>
+    <system:String x:Key="TimeTable">Time Table</system:String>
+    <system:String x:Key="CreateEvent">Event</system:String>
+    <system:String x:Key="enrollStudent">Enroll Student</system:String>
+    <system:String x:Key="Student">Students</system:String>
+</ResourceDictionary>
