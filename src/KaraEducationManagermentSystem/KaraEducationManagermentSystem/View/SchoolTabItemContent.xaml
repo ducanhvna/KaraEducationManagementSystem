@@ -7,10 +7,13 @@
              xmlns:vm="clr-namespace:KaraEducationManagermentSystem.ViewModel"
              xmlns:coponent="clr-namespace:KaraEducationManagermentSystem.View.Component.schooltab"
              xmlns:share="clr-namespace:KaraEducationManagermentSystem.View.Shared"
+             xmlns:gridDraw ="clr-namespace:GridDrawingNS;assembly=GridDrawing"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" 
              DataContext="{DynamicResource vmMain}"
-             x:Name="mainWindow">
+             x:Name="mainWindow"
+             
+             >
     <UserControl.Resources>
         <ResourceDictionary>
             <vm:ViewModelSchoolTabItem x:Key="vmMain"/>
@@ -113,6 +116,11 @@
                         <coponent:StudentListDataView share:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}">
 
                         </coponent:StudentListDataView>
+                    </Grid>
+                    
+                    <!--Time tabl Tab-->
+                    <Grid>
+                        <gridDraw:GridContainer NumberofRow="9"></gridDraw:GridContainer>
                     </Grid>
                 </Grid>
             </Border>

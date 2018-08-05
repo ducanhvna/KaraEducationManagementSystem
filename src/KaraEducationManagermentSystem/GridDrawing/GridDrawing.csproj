@@ -53,6 +53,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\ICell.cs" />
+    <Compile Include="Data\IColumn.cs" />
+    <Compile Include="Data\IRow.cs" />
     <Compile Include="GridContainer.xaml.cs">
       <DependentUpon>GridContainer.xaml</DependentUpon>
     </Compile>
@@ -69,7 +72,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ViewModel\GridDrawingViewModel.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

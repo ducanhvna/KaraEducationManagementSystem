@@ -20,9 +20,25 @@ namespace GridDrawingNS
     /// </summary>
     public partial class GridContainer : UserControl
     {
+        private int m_numberOfRow;
+
         public GridContainer()
         {
             InitializeComponent();
+
+        }
+
+        public int NumberofRow
+        {
+            get
+            {
+                return m_numberOfRow;
+            }
+            set
+            {
+                if(m_numberOfRow != value)
+                { m_numberOfRow = value; }
+            }
         }
     }
 }

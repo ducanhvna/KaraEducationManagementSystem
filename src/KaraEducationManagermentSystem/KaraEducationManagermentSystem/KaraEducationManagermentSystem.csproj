@@ -334,6 +334,10 @@
     <Resource Include="Resources\icon\lessons_32.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GridDrawing\GridDrawing.csproj">
+      <Project>{7338c12b-dbdf-4416-a9a8-ddf1d0cb0844}</Project>
+      <Name>GridDrawing</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KaraMongoModel\KaraMongoModel.csproj">
       <Project>{3bd3c99b-e00f-4400-ab3c-9b22b2db165c}</Project>
       <Name>KaraMongoModel</Name>
