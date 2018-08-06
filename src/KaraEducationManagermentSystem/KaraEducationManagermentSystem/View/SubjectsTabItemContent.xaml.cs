@@ -26,6 +26,9 @@ namespace KaraEducationManagermentSystem.View
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Set Languge for this component
+        /// </summary>
         internal void SetLanguageForComponent()
         {
             Global.SetLanguageForComponent(this);

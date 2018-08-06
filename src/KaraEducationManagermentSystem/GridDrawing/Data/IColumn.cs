@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace GridDrawingNS.Data
 {
-    class IColumn
+    public class DColumn
     {
+        public double Width { get; set; }
     }
 }

@@ -86,6 +86,7 @@
             </ListView>
             <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1">
                 <Grid>
+                    <!--Overview Tab-->
                     <Grid>
                         <Grid.Style>
                             <Style TargetType="Grid">
@@ -100,6 +101,24 @@
                         <coponent:Overview share:ShareObject.SchoolObject="{Binding ElementName=mainWindow, Path=DataContext.SchoolObject}">
 
                         </coponent:Overview>
+                    </Grid>
+                    <!--TimeTable Tab-->
+                    <Grid>
+                        <Grid.Style>
+                            <Style TargetType="Grid">
+                                <Setter Property="Visibility" Value="Hidden"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=mainListView, Path=SelectedIndex}" Value="1">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Grid.Style>
+                        <ScrollViewer HorizontalScrollBarVisibility="Visible">
+                            <gridDraw:GridContainer gridDraw:DGridShare.GridContext="{Binding ElementName=mainWindow, Path=DataContext.TimeTableContext}">
+
+                            </gridDraw:GridContainer>
+                        </ScrollViewer>
                     </Grid>
                     <!--Student Tab-->
                     <Grid>
@@ -118,10 +137,7 @@
                         </coponent:StudentListDataView>
                     </Grid>
                     
-                    <!--Time tabl Tab-->
-                    <Grid>
-                        <gridDraw:GridContainer NumberofRow="9"></gridDraw:GridContainer>
-                    </Grid>
+                  
                 </Grid>
             </Border>
         </Grid>
