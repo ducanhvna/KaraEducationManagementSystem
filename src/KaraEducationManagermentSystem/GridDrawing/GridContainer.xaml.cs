@@ -24,6 +24,9 @@ namespace GridDrawingNS
     {
         private DContext gridContext;
 
+        /// <summary>
+        /// Rows
+        /// </summary>
         public ObservableCollection<DRow> Rows
         {
             get
@@ -33,6 +36,9 @@ namespace GridDrawingNS
            
         }
 
+        /// <summary>
+        /// SeparateRow
+        /// </summary>
         private void SeparateRow()
         {
             mainGrid.RowDefinitions.Clear();
@@ -45,12 +51,18 @@ namespace GridDrawingNS
 
         }
 
+        /// <summary>
+        /// GridContainer
+        /// </summary>
         public GridContainer()
         {
             InitializeComponent();
 
         }
 
+        /// <summary>
+        /// Columns
+        /// </summary>
         public ObservableCollection<DColumn> Columns
         {
             get
@@ -60,6 +72,9 @@ namespace GridDrawingNS
            
         }
 
+        /// <summary>
+        /// GridContext
+        /// </summary>
         public DContext GridContext { get => gridContext; set { gridContext = value;
 
                 SeparateColumn();
@@ -75,10 +90,13 @@ namespace GridDrawingNS
 
                 
 
-               
             }
+            
         }
 
+        /// <summary>
+        /// SeparateColumn
+        /// </summary>
         private void SeparateColumn()
         {
             mainGrid.ColumnDefinitions.Clear();
@@ -89,6 +107,7 @@ namespace GridDrawingNS
                 mainGrid.ColumnDefinitions.Add(columnDefinition);
             }
         }
+
 
        
     }

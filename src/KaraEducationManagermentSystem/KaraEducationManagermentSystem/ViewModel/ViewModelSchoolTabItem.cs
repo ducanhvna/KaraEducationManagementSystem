@@ -11,6 +11,7 @@ using System.Collections.ObjectModel;
 using CommonNS.ViewModel;
 using GridDrawingNS;
 using GridDrawingNS.Data;
+using KaraEducationManagermentSystem.View.timetable;
 
 namespace KaraEducationManagermentSystem.ViewModel
 {
@@ -95,6 +96,7 @@ namespace KaraEducationManagermentSystem.ViewModel
             // Add Monday
             var mondayCell = new DCell(0, 1, 1, 12);
             mondayCell.BackgroundContent = "Monday";
+            mondayCell.UIContent = new lessonView();
 
             TimeTableContext.AddCell(mondayCell);
             AddLessonIndex(1, 12);
@@ -279,7 +281,10 @@ namespace KaraEducationManagermentSystem.ViewModel
            
         
         }
-      
+
+        /// <summary>
+        /// TimeTableContext
+        /// </summary>
         public DContext TimeTableContext {
             get {
                 return m_TimeTableContext;

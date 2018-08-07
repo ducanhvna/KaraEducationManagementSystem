@@ -7,6 +7,8 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows;
 using System.Collections.ObjectModel;
+using System.Windows.Controls.Primitives;
+using System.Windows.Input;
 
 namespace GridDrawingNS.Data
 {
@@ -33,6 +35,7 @@ namespace GridDrawingNS.Data
     /// </summary>
     public class DCell
     {
+        public Grid Parent { get; internal set; }
         public DCell()
         {
             InitializeBackground();
@@ -80,6 +83,10 @@ namespace GridDrawingNS.Data
 
         public event EventHandler Changed;
 
+        /// <summary>
+        /// OnCellChanged
+        /// </summary>
+        /// <param name="e"></param>
         protected virtual void OnCellChanged(EventArgs e)
         {
             EventHandler handler = Changed;
@@ -89,8 +96,9 @@ namespace GridDrawingNS.Data
             }
         }
 
-
-        public Grid Parent;
+        /// <summary>
+        /// Parent
+        /// </summary>
 
         /// <summary>
         /// Background
@@ -137,6 +145,9 @@ namespace GridDrawingNS.Data
             }
         }
 
+        /// <summary>
+        /// BackgroundContent
+        /// </summary>
         public string BackgroundContent
         {
             get
@@ -151,10 +162,34 @@ namespace GridDrawingNS.Data
                 }
             }
         }
+        public UserControl UIContent
+        {
+            get
+            {
+                return m_UIContent;
+            }
+            set
+            {
+                if(m_UIContent != value)
+                {
+                    m_UIContent = value;
+                    mainGrid.Children.Add(m_UIContent);
 
+                    // Create ThumbItem
+                    ThumbItem = new Thumb();
+                    ThumbItem.HorizontalAlignment = HorizontalAlignment.Stretch;
+                    ThumbItem.VerticalAlignment = VerticalAlignment.Stretch;
+                    mainGrid.Children.Add(ThumbItem);
+                    ThumbItem.Opacity = 0;
+                  
+                }
+            }
+        }
+
+        Thumb ThumbItem;
         private Border background = new Border();
         private Grid mainGrid;
         private TextBlock backgroundTextBlock;
-
+        private UserControl m_UIContent;
     }
 }

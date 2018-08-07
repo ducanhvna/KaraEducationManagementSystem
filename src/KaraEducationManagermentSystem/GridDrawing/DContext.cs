@@ -119,6 +119,8 @@ namespace GridDrawingNS
 
             Cells[cell.Row, cell.Column] = cell;
 
+            cell.Parent = GUI;
+
         }
     }
 }

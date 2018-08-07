@@ -158,6 +158,9 @@
     <Compile Include="View\TeacherTabItemContent.xaml.cs">
       <DependentUpon>TeacherTabItemContent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\timetable\lessonView.xaml.cs">
+      <DependentUpon>lessonView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -275,6 +278,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\TeacherTabItemContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\timetable\lessonView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
