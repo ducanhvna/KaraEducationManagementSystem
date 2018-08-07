@@ -31,8 +31,10 @@ namespace KaraMongoModelNS
         /// Custorm Field
         /// </summary>
         public ObservableCollection<CustomField> CustomFields { get; set; }
-
+        
         public ObservableCollection<EduStudent> Students { get; set; }
+
+        public ObservableCollection<EduScoreTable> ScoreTables { get; set; }
 
         [BsonIgnore]
         public EduTeacher Teacher { get; set; }

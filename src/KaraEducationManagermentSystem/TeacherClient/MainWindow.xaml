@@ -4,9 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeacherClient"
+        xmlns:helpers="clr-namespace:CommonNS.Helpers;assembly=LibCommon"
         mc:Ignorable="d"
-        Title="Teacher Client" Height="450" Width="800">
+        Title="Teacher Client" Height="450" Width="800"
+        DataContext="{DynamicResource vmMain}"
+        helpers:DialogCloser.DialogResult="{Binding CloseWindowFlag}">
+    <Window.Resources>
+        <ResourceDictionary>
+            <local:MainWindowViewModel x:Key="vmMain"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/StringResources.Vi.xaml">
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
-        
+        <TabControl>
+            <TabItem Header="{DynamicResource timetable}"></TabItem>
+            <TabItem Header="{DynamicResource class}"></TabItem>
+        </TabControl>
+       
     </Grid>
 </Window>

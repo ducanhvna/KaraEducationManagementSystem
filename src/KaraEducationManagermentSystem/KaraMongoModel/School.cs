@@ -33,6 +33,8 @@ namespace KaraMongoModelNS
 
         public ObservableCollection<EduStudent> UnassignStudent { get; set; }
 
+        public ObservableCollection<EduTestingTerm> TestingTerms { get; set; }
+
         public EduTimeTable TimeTable { get; set; }
     }
 }
