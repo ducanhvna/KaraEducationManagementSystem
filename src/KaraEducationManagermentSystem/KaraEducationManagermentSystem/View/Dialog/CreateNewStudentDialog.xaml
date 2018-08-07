@@ -41,19 +41,17 @@
                     <RowDefinition Height="25"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Last name:" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text="Full Name:" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"></TextBlock>
                 <TextBox Grid.Column="1" Width="200" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"
-                         >
+                         Text="{Binding NewStudent.Name}">
 
                 </TextBox>
 
-                <TextBlock HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center" Grid.Row="1" Text="First name:"></TextBlock>
-                <TextBox Grid.Column="1" Grid.Row="1" Width="100" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"/>
-
                 <TextBlock Grid.Row="2" Text="Short:" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"></TextBlock>
                 <DockPanel Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center">
-                    <TextBox  Width="100" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"/>
-                    <CheckBox HorizontalAlignment="Left" Margin="10,2" VerticalAlignment="Center">Male</CheckBox>
+                    <TextBox  Width="100" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"
+                              Text="{Binding NewStudent.ShortName}"/>
+                    <CheckBox HorizontalAlignment="Left" Margin="10,2" VerticalAlignment="Center" IsChecked="{Binding NewStudent.Male}">Male</CheckBox>
                 </DockPanel>
                 <TextBlock Grid.Row="3" Text="Teacher's contract" Margin="0,10"></TextBlock>
                 <DockPanel Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center">
@@ -75,14 +73,16 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Email:" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"></TextBlock>
-                <TextBox Grid.Column="1" Width="200" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center">
+                <TextBox Grid.Column="1" Width="200" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"
+                         Text="{Binding NewStudent.Email}">
 
                 </TextBox>
 
-                <TextBlock HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center" Grid.Row="1" Text="First name:"></TextBlock>
-                <TextBox Grid.Column="1" Grid.Row="1" Width="200" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"/>
+                <TextBlock HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center" Grid.Row="1" Text="Phone:"></TextBlock>
+                <TextBox Grid.Column="1" Grid.Row="1" Width="200" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"
+                         Text="{Binding NewStudent.Phone}"/>
 
-                <TextBlock Grid.Row="2" Text="Short:" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="2" Text="Title:" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"></TextBlock>
                 <DockPanel Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center">
                     <TextBox  Width="80" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Center"/>
                     <TextBox  Width="80" Margin="20,2" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
@@ -92,7 +92,7 @@
             <!--Class teacher for the class-->
             <GroupBox Grid.Row="1" Header="class teacher for the class"
                       Margin="0,25,20,25">
-                <Button HorizontalAlignment="Right" Content="Change" Width="90" Height="20"></Button>
+                <Button  HorizontalAlignment="Right" Content="Change" Width="90" Height="20"></Button>
             </GroupBox>
 
             <!--Class room area-->
@@ -111,7 +111,7 @@
                     </Grid.ColumnDefinitions>
                     <Grid Background="Aqua" Margin="10">
                     </Grid>
-                    <Button Grid.Column="1" Width="90" Height="25" Content="Change"/>
+                    <Button Command="{Binding ChangeColorPictureCommand}" Grid.Column="1" Width="90" Height="25" Content="Change"/>
                 </Grid>
             </GroupBox>
 

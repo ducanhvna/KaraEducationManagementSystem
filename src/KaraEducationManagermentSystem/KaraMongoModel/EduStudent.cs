@@ -11,23 +11,52 @@ namespace KaraMongoModelNS
     public class EduStudent
     {
         /// <summary>
-        /// Id
-        /// </summary>
-        public string Id { get; set; }
-
-        /// <summary>
-        /// Name
+        /// Student full Name
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Parents
+        /// Student Short name
         /// </summary>
-        public ObservableCollection<Parent> Parents { get; set; }
+        public string ShortName { get; set; }
+
+
+        /// <summary>
+        /// Gender
+        /// </summary>
+        public bool Male { get; set; }
+
+        /// <summary>
+        /// Email
+        /// </summary>
+        public string Email { get; set; }
+
+        /// <summary>
+        /// Phone
+        /// </summary>
+        public string Phone { get; set; }
+
+        /// <summary>
+        /// Title
+        /// </summary>
+        public string Title { get; set; }
 
         [BsonIgnore]
-        public EduClass Class { get; set; }
+        public ObservableCollection<EduClass> ClassTeacherForClass { get; set; }
 
+        [BsonIgnore]
+        public ObservableCollection<EduClassRoom> ClassRooms { get; set; }
+
+        /// <summary>
+        /// Color
+        /// </summary>
+        public string Color { get; set; }
+        public ObservableCollection<CustomField> CustomFields { get; set; }
+
+        /// <summary>
+        /// Time off
+        /// </summary>
+        public ObservableCollection<TimeOff> TimeOffs { get; set; }
 
 
     }

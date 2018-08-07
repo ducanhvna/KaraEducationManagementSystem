@@ -7,7 +7,7 @@
         xmlns:vm="clr-namespace:KaraEducationManagermentSystem.ViewModel.Dialog"
         xmlns:helpers="clr-namespace:CommonNS.Helpers;assembly=LibCommon"
         mc:Ignorable="d"
-        Title="CreateNewSubjectDialog" Height="550" Width="800"
+        Title="CreateNewSubjectDialog" Height="620" Width="800"
         WindowStartupLocation="CenterScreen"
         DataContext="{DynamicResource vmMain}"
         helpers:DialogCloser.DialogResult="{Binding CloseWindowFlag}">
@@ -30,12 +30,26 @@
                 <TextBlock Text="Subject title:" VerticalAlignment="Center"></TextBlock>
                 <TextBox Grid.Column="1" Margin="0,3" Text="{Binding NewSubject.Title}"></TextBox>
                 <TextBlock Text="Short:" Grid.Row="1" VerticalAlignment="Center"></TextBlock>
-                <TextBox Grid.Column="1" Grid.Row="1" Margin="0,3"></TextBox>
+                <TextBox Grid.Column="1" Grid.Row="1" Margin="0,3" Text="{Binding NewSubject.ShortName}"></TextBox>
                 <Button Grid.Row="2" Grid.Column="1" Margin="40,3">Custom Field...</Button>
             </Grid>
             
-            <!--Group Color/Picture-->
-            <GroupBox Margin="0,40,0,0" Header="Color/Picture">
+            <!--Group Color-->
+            <GroupBox Margin="0,40,0,0" Header="Color">
+                <Grid Height="80">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Background="Aqua" Margin="80,10">
+                        <Image ></Image>
+                    </Grid>
+                    <Button Grid.Column="1" Width="90" Height="25" Content="Change"/>
+                </Grid>
+            </GroupBox>
+
+            <!--Group Picture-->
+            <GroupBox Margin="0,40,0,0" Header="Picture">
                 <Grid Height="80">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*"/>

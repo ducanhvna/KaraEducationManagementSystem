@@ -52,6 +52,7 @@ namespace KaraMongoModelNS
 
             Console.WriteLine("Initianting Mongo Db Server.......");
             MongoServer server = null;
+          
             try
             {
                 Console.WriteLine("Getting Servicer object......");
