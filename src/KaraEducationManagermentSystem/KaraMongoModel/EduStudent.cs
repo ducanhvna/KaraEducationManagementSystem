@@ -10,10 +10,19 @@ namespace KaraMongoModelNS
 {
     public class EduStudent
     {
+        /// <summary>
+        /// Id
+        /// </summary>
         public string Id { get; set; }
 
+        /// <summary>
+        /// Name
+        /// </summary>
         public string Name { get; set; }
 
+        /// <summary>
+        /// Parents
+        /// </summary>
         public ObservableCollection<Parent> Parents { get; set; }
 
         [BsonIgnore]

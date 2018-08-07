@@ -28,6 +28,9 @@ namespace KaraMongoModelNS
         /// </summary>
         public string Picture { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [BsonIgnore]
         public School school { get; set; }
     }
