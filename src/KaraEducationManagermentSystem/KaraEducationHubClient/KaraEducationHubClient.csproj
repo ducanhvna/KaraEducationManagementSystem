@@ -54,6 +54,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="TeacherClient\TeacherClientView.xaml.cs">
+      <DependentUpon>TeacherClientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherClient\TeacherClientViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -73,6 +77,10 @@
     <Page Include="Resources\StringResources.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TeacherClient\TeacherClientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -107,23 +115,11 @@
       <Project>{2ff2a8f5-06c4-431a-a533-9a3525b933e5}</Project>
       <Name>LibCommon</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ParentsClient\ParentsClient.csproj">
-      <Project>{c0a135ea-1651-45d8-8934-b9df7afc32f6}</Project>
-      <Name>ParentsClient</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PresidentClient\PresidentClient.csproj">
-      <Project>{33832c25-dc06-4e36-b636-e553a5555ccd}</Project>
-      <Name>PresidentClient</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\StudentClient\StudentClient.csproj">
-      <Project>{87c43e21-5067-4f97-bfec-8dd87af54f38}</Project>
-      <Name>StudentClient</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TeacherClient\TeacherClient.csproj">
-      <Project>{380a1395-07a6-4029-84e1-5fe70f9fb68c}</Project>
-      <Name>TeacherClient</Name>
-    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ParentsClient\" />
+    <Folder Include="PresidentClient\" />
+    <Folder Include="StudentClient\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

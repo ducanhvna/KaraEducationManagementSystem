@@ -6,5 +6,7 @@
     <system:String x:Key="usertype">Nhóm:</system:String>
     <system:String x:Key="login">Đăng nhập</system:String>
     <system:String x:Key="cancel">Đóng</system:String>
+    <system:String x:Key="timetable">Thời gian biểu</system:String>
+    <system:String x:Key="class">Lớp học</system:String>
     <!-- All StringResources Goes Here -->
 </ResourceDictionary>

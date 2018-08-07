@@ -61,14 +61,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Resources\StringResources.Vi.xaml">
+    <EmbeddedResource Include="Resources\StringResources.Vi.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Resources\StringResources.xaml">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\StringResources.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindowViewModel.cs" />

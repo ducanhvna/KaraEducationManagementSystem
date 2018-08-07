@@ -5,10 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TeacherClient;
-using PresidentClient;
-using ParentsClient;
-using StudentClient;
+
+using KaraEducationHubClient.TeacherClient;
 
 namespace KaraEducationHubClient
 {
@@ -89,25 +87,25 @@ namespace KaraEducationHubClient
 
         private void OpenParentsDialog()
         {
-            ParentsClient.MainWindow frm = new ParentsClient.MainWindow();
-            frm.Show();
+            //ParentsClient.MainWindow frm = new ParentsClient.MainWindow();
+            //frm.Show();
         }
 
         private void OpenStudentDialog()
         {
-            StudentClient.MainWindow frm = new StudentClient.MainWindow();
-            frm.Show();
+            //StudentClient.MainWindow frm = new StudentClient.MainWindow();
+            //frm.Show();
         }
 
         private void OpenTeacherDialog()
         {
-            TeacherClient.MainWindow frm = new TeacherClient.MainWindow();
+            TeacherClientView frm = new TeacherClientView();
             frm.Show();
         }
 
         private void OpenPresidentdialog()
         {
-            PresidentClient.MainWindow frm = new PresidentClient.MainWindow();
+            //PresidentClient.MainWindow frm = new PresidentClient.MainWindow();
         }
 
         private void OpenAdminDialog()

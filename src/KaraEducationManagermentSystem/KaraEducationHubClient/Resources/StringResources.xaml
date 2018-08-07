@@ -6,4 +6,6 @@
     <system:String x:Key="usertype">User type:</system:String>
     <system:String x:Key="login">Login</system:String>
     <system:String x:Key="cancel">Cancel</system:String>
+    <system:String x:Key="timetable">Time table</system:String>
+    <system:String x:Key="class">Class</system:String>
 </ResourceDictionary>

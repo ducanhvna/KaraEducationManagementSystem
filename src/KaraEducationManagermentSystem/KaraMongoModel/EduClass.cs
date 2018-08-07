@@ -20,6 +20,9 @@ namespace KaraMongoModelNS
         /// </summary>
         public string ShortName { get; set; }
 
+        /// <summary>
+        /// Color
+        /// </summary>
         public string Color { get; set; }
 
         /// <summary>
@@ -32,8 +35,14 @@ namespace KaraMongoModelNS
         /// </summary>
         public ObservableCollection<CustomField> CustomFields { get; set; }
         
+        /// <summary>
+        /// Students
+        /// </summary>
         public ObservableCollection<EduStudent> Students { get; set; }
 
+        /// <summary>
+        /// ScoreTables
+        /// </summary>
         public ObservableCollection<EduScoreTable> ScoreTables { get; set; }
 
         [BsonIgnore]
