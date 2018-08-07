@@ -4,10 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KaraEducationHubClient"
+        xmlns:helpers="clr-namespace:CommonNS.Helpers;assembly=LibCommon"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" DataContext="{DynamicResource vmMain}"
+        helpers:DialogCloser.DialogResult="{Binding CloseWindowFlag}">
     <Window.Resources>
         <ResourceDictionary>
+            <local:MainWindowViewModel x:Key="vmMain"/>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Resources/StringResources.Vi.xaml">
                 </ResourceDictionary>
@@ -30,12 +33,31 @@
             <TextBox Text="" Grid.Column="1" VerticalAlignment="Center" Height="25"></TextBox>
             <TextBlock Text="{DynamicResource password}" VerticalAlignment="Center" Grid.Row="1"></TextBlock>
             <TextBox Text="" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Height="25"></TextBox>
+            <!--User Type-->
             <TextBlock Text="{DynamicResource usertype}" VerticalAlignment="Center" Grid.Row="2"></TextBlock>
-            <ComboBox Grid.Row="2" Width="80" Height="22" Grid.Column="1" HorizontalAlignment="Left"/>
+            <ComboBox Grid.Row="2" Width="80" Height="22" Grid.Column="1" HorizontalAlignment="Left" SelectedIndex="{Binding TypeIndex}">
+                <ComboBox.Items>
+                    <ComboBoxItem>
+                        <TextBlock Text="Admin"></TextBlock>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock Text="President"></TextBlock>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock Text="Teacher"></TextBlock>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock Text="Student"></TextBlock>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock Text="Student Parent"></TextBlock>
+                    </ComboBoxItem>
+                </ComboBox.Items>
+            </ComboBox>
             <!--Button Area-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="3">
-                <Button Width="80" Height="20" Margin="20,0">OK</Button>
-                <Button Width="80" Height="20">Cancel</Button>
+                <Button Width="80" Height="20" Margin="20,0" Content="{DynamicResource login}" Command="{Binding LoginCommand}"></Button>
+                <Button Width="80" Height="20" Content="{DynamicResource cancel}" Command="{Binding CancelCommand}"></Button>
             </StackPanel>
         </Grid>
         

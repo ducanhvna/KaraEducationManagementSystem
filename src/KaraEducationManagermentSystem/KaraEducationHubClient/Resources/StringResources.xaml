@@ -3,5 +3,7 @@
     xmlns:system="clr-namespace:System;assembly=mscorlib">
     <system:String x:Key="username">User Name:</system:String>
     <system:String x:Key="password">Password:</system:String>
-    <system:String x:Key="usertype">User type</system:String>
+    <system:String x:Key="usertype">User type:</system:String>
+    <system:String x:Key="login">Login</system:String>
+    <system:String x:Key="cancel">Cancel</system:String>
 </ResourceDictionary>

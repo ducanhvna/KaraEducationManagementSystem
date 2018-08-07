@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A81A127D-FBCE-4838-A661-46F7E5E04BFD}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>KaraEducationHubClient</RootNamespace>
-    <AssemblyName>KaraEducationHubClient</AssemblyName>
+    <ProjectGuid>{33832C25-DC06-4E36-B636-E553A5555CCD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>PresidentClient</RootNamespace>
+    <AssemblyName>PresidentClient</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -50,33 +53,16 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Resources\StringResources.Vi.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Resources\StringResources.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -102,28 +88,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\LibCommon\LibCommon.csproj">
-      <Project>{2ff2a8f5-06c4-431a-a533-9a3525b933e5}</Project>
-      <Name>LibCommon</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ParentsClient\ParentsClient.csproj">
-      <Project>{c0a135ea-1651-45d8-8934-b9df7afc32f6}</Project>
-      <Name>ParentsClient</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PresidentClient\PresidentClient.csproj">
-      <Project>{33832c25-dc06-4e36-b636-e553a5555ccd}</Project>
-      <Name>PresidentClient</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\StudentClient\StudentClient.csproj">
-      <Project>{87c43e21-5067-4f97-bfec-8dd87af54f38}</Project>
-      <Name>StudentClient</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TeacherClient\TeacherClient.csproj">
-      <Project>{380a1395-07a6-4029-84e1-5fe70f9fb68c}</Project>
-      <Name>TeacherClient</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

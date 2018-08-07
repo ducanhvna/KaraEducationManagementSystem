@@ -4,5 +4,7 @@
     <system:String x:Key="username">Tên đăng nhập:</system:String>
     <system:String x:Key="password">Mật khẩu:</system:String>
     <system:String x:Key="usertype">Nhóm:</system:String>
+    <system:String x:Key="login">Đăng nhập</system:String>
+    <system:String x:Key="cancel">Đóng</system:String>
     <!-- All StringResources Goes Here -->
 </ResourceDictionary>
