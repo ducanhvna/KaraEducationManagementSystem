@@ -27,8 +27,14 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
 
             // Initialie Cancel button command
             CloseWithoutSaveCommand = new RelayCommand(CloseWithoutSave);
+
+            // Initialize ChangeColorPictureCommand
+            ChangeColorPictureCommand = new RelayCommand(ChangeColorPicture);
         }
 
+        /// <summary>
+        /// SchoolObject
+        /// </summary>
         public School SchoolObject
         {
             get => m_SchoolObject; set
@@ -40,6 +46,10 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
                 }
             }
         }
+
+        /// <summary>
+        /// EduModel
+        /// </summary>
         public KaraMongodbModel EduModel
         {
             get => m_Model;
@@ -105,6 +115,9 @@ namespace KaraEducationManagermentSystem.ViewModel.Dialog
         #endregion
 
         #region Change Color command
+        /// <summary>
+        /// ChangeColorPictureCommand
+        /// </summary>
         public RelayCommand ChangeColorPictureCommand
         {
             get; internal set;

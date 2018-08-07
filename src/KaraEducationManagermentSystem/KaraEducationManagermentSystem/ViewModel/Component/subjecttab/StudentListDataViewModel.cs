@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace KaraEducationManagermentSystem.ViewModel.Component.subjecttab
 {
@@ -48,9 +49,12 @@ namespace KaraEducationManagermentSystem.ViewModel.Component.subjecttab
                     {
                         // All
                         case 0:
-                            foreach (var item in SchoolObject.UnassignStudent)
+                            if (SchoolObject!=null&& SchoolObject.UnassignStudent != null)
                             {
-                                result.Add(item);
+                                foreach (var item in SchoolObject.UnassignStudent)
+                                {
+                                    result.Add(item);
+                                }
                             }
                             foreach (var item in SchoolObject.ListClass)
                             {
@@ -77,6 +81,10 @@ namespace KaraEducationManagermentSystem.ViewModel.Component.subjecttab
                 return result;
             }
         }
+
+        /// <summary>
+        /// ConditionIndex
+        /// </summary>
         private int m_CondtionIndex;
 
         /// <summary>
@@ -142,6 +150,7 @@ namespace KaraEducationManagermentSystem.ViewModel.Component.subjecttab
                     m_SchoolObject = value;
                     RaisePropertyChanged("SchoolObject");
                     RaisePropertyChanged("ListCondition");
+                    RaisePropertyChanged("ListStudent");
                 }
             }
         }
