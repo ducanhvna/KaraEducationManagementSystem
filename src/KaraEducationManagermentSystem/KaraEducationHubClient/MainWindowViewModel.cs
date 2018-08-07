@@ -7,6 +7,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 using KaraEducationHubClient.TeacherClient;
+using KaraEducationHubClient.ParentsClient;
+using KaraEducationHubClient.PresidentClient;
+using KaraEducationHubClient.StudentClient;
+using KaraEducationHubClient.ServiceReference1;
 
 namespace KaraEducationHubClient
 {
@@ -20,6 +24,11 @@ namespace KaraEducationHubClient
             // Init Cancel command
             CancelCommand = new RelayCommand(Cancel);
 
+            Service1Client client = new Service1Client();
+
+            var result = client.Register("abc", "bcd");
+
+            var result2 = client.GetDataUsingDataContract(new CompositeType());
         }
         #region User type area
         /// <summary>
@@ -87,14 +96,14 @@ namespace KaraEducationHubClient
 
         private void OpenParentsDialog()
         {
-            //ParentsClient.MainWindow frm = new ParentsClient.MainWindow();
-            //frm.Show();
+            ParentClientView frm = new ParentClientView();
+            frm.Show();
         }
 
         private void OpenStudentDialog()
         {
-            //StudentClient.MainWindow frm = new StudentClient.MainWindow();
-            //frm.Show();
+            StudentClientView frm = new StudentClientView();
+            frm.Show();
         }
 
         private void OpenTeacherDialog()
@@ -105,7 +114,7 @@ namespace KaraEducationHubClient
 
         private void OpenPresidentdialog()
         {
-            //PresidentClient.MainWindow frm = new PresidentClient.MainWindow();
+            PresidentClientView frm = new PresidentClientView();
         }
 
         private void OpenAdminDialog()

@@ -24,6 +24,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{6DA802BA-E5B0-4E3D-8622-66835D159D9B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KaraEducationHubClient", "KaraEducationHubClient\KaraEducationHubClient.csproj", "{A81A127D-FBCE-4838-A661-46F7E5E04BFD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1934D51D-83F5-42D3-925F-D2FC73757D27} = {1934D51D-83F5-42D3-925F-D2FC73757D27}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

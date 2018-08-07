@@ -36,6 +36,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -54,6 +56,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Connected Services\eTeacherServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ParentsClient\ParentClientView.xaml.cs">
+      <DependentUpon>ParentClientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ParentsClient\ParentClientViewModel.cs" />
+    <Compile Include="PresidentClient\PresidentClientView.xaml.cs">
+      <DependentUpon>PresidentClientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PresidentClient\PresidentClientViewModel.cs" />
+    <Compile Include="StudentClient\StudentClientView.xaml.cs">
+      <DependentUpon>StudentClientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentClient\StudentClientViewModel.cs" />
     <Compile Include="TeacherClient\TeacherClientView.xaml.cs">
       <DependentUpon>TeacherClientView.xaml</DependentUpon>
     </Compile>
@@ -70,6 +94,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ParentsClient\ParentClientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PresidentClient\PresidentClientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\StringResources.Vi.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -77,6 +109,10 @@
     <Page Include="Resources\StringResources.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StudentClient\StudentClientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TeacherClient\TeacherClientView.xaml">
       <SubType>Designer</SubType>
@@ -102,6 +138,32 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Connected Services\eTeacherServiceReference\eTeacherService.wsdl" />
+    <None Include="Connected Services\eTeacherServiceReference\eTeacherService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\eTeacherServiceReference\eTeacherService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\eTeacherServiceReference\eTeacherService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\eTeacherServiceReference\KaraEducationHubClient.eTeacherServiceReference.TreeviewDataType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\KaraEducationHubClient.ServiceReference1.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service1.wsdl" />
+    <None Include="Connected Services\ServiceReference1\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -117,9 +179,41 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ParentsClient\" />
-    <Folder Include="PresidentClient\" />
-    <Folder Include="StudentClient\" />
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\eTeacherServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\Service1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\eTeacherServiceReference\eTeacherService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\eTeacherServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\eTeacherServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\eTeacherServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

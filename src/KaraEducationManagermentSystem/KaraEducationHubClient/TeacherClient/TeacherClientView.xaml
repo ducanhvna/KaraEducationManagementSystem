@@ -17,8 +17,30 @@
     </Window.Resources>
     <Grid>
         <TabControl>
-            <TabItem Header="{DynamicResource timetable}"></TabItem>
-            <TabItem Header="{DynamicResource class}"></TabItem>
+            <TabItem Header="{DynamicResource timetable}">
+                <Grid>
+                    <DockPanel Height="60" VerticalAlignment="Top">
+                        <ToolBarTray>
+                            <ToolBar>
+                                <Button>Reload</Button>
+                            </ToolBar>
+                        </ToolBarTray>
+                    </DockPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="{DynamicResource class}">
+                <Grid>
+                    <DockPanel VerticalAlignment="Top" Height="60">
+                        <ToolBarTray>
+                            <ToolBar>
+                                <Button BorderThickness="1" BorderBrush="Black" Margin="3">Thêm điểm</Button>
+                                <Button BorderThickness="1" BorderBrush="Black" Margin="3">Gửi Thông tin</Button>
+                            </ToolBar>
+                        </ToolBarTray>
+                    </DockPanel>
+                </Grid>
+                
+            </TabItem>
         </TabControl>
 
     </Grid>

@@ -12,6 +12,8 @@ namespace KaraEducationManagermentService
     [ServiceContract]
     public interface IService1
     {
+        [OperationContract]
+        string Register(string userName, string passWord);
 
         [OperationContract]
         string GetData(int value);

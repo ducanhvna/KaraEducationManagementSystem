@@ -29,5 +29,10 @@ namespace KaraEducationManagermentService
             }
             return composite;
         }
+
+        public string Register(string userName, string passWord)
+        {
+            return "abc";
+        }
     }
 }

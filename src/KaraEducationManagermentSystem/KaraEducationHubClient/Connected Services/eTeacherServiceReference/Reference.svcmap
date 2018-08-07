@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1ca57cf3-2f36-40bd-af6a-011a01f4dfc2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50830/eTeacherService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="eTeacherService.xsd" MetadataType="Schema" ID="9d26c021-ad8c-4710-8843-65e07df367be" SourceId="1" SourceUrl="http://localhost:50830/eTeacherService.svc?xsd=xsd0" />
+    <MetadataFile FileName="eTeacherService.wsdl" MetadataType="Wsdl" ID="2dbd6f1e-5fe4-4dbc-8346-4ce26ad2e9ad" SourceId="1" SourceUrl="http://localhost:50830/eTeacherService.svc?wsdl" />
+    <MetadataFile FileName="eTeacherService1.xsd" MetadataType="Schema" ID="59e36250-b866-45a8-943e-791190277529" SourceId="1" SourceUrl="http://localhost:50830/eTeacherService.svc?xsd=xsd2" />
+    <MetadataFile FileName="eTeacherService2.xsd" MetadataType="Schema" ID="a796373d-b549-4b0f-acb2-78e85c71d59a" SourceId="1" SourceUrl="http://localhost:50830/eTeacherService.svc?xsd=xsd1" />
+    <MetadataFile FileName="eTeacherService.disco" MetadataType="Disco" ID="e5f8da7a-30ba-4482-9bc9-f21fee641cd3" SourceId="1" SourceUrl="http://localhost:50830/eTeacherService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
